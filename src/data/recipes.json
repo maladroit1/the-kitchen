@@ -1,0 +1,815 @@
+{
+  "schemaVersion": "v1",
+  "dataVersion": "2026-05-10",
+  "source": "Box folder: Recipes",
+  "recipes": [
+    {
+      "id": "coffee-creme-brulee-v2",
+      "title": "Coffee Crème Brûlée",
+      "version": "v2",
+      "badge": "Sous Vide",
+      "icon": "☕",
+      "accent": "#7B4423",
+      "description": "Sous vide method using instant coffee for clean dispersion and no infusion step. More forgiving than the oven, perfectly even texture, holds in the bath if dinner runs late.",
+      "baseServings": 6,
+      "servingsLabel": "4 oz portions",
+      "activeMinutes": 25,
+      "totalMinutes": 330,
+      "tags": ["dessert", "sous vide", "make-ahead"],
+      "ingredients": [
+        { "id": "i1", "name": "heavy cream", "amount": 2, "unit": "cup" },
+        { "id": "i2", "name": "instant coffee (quality — see notes)", "amount": 2, "unit": "tbsp" },
+        { "id": "i3", "name": "large egg yolks", "amount": 5, "unit": "whole" },
+        { "id": "i4", "name": "granulated sugar (for custard)", "amount": 6, "unit": "tbsp" },
+        { "id": "i5", "name": "vanilla extract", "amount": 1, "unit": "tsp" },
+        { "id": "i6", "name": "kosher salt", "amount": 1, "unit": "pinch" },
+        { "id": "i7", "name": "turbinado sugar (for the brûlée top)", "amount": 6, "unit": "tbsp" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Preheat the bath", "content": "Preheat sous vide bath to 176°F (80°C). Set out six 4 oz wide-mouth mason jars with lids and rings." },
+        { "id": "s2", "title": "Heat cream and dissolve coffee", "content": "In a saucepan over medium-low, warm the cream until steaming (do not boil). Off heat, whisk in the instant coffee until fully dissolved." },
+        { "id": "s3", "title": "Whisk the yolks", "content": "In a medium bowl, whisk the yolks, sugar, and salt until pale and ribbony." },
+        { "id": "s4", "title": "Temper", "content": "Whisking constantly, stream the hot coffee cream into the yolks slowly — first tablespoon at a time, then build up." },
+        { "id": "s5", "title": "Finish the base", "content": "Whisk in the vanilla. Strain through a fine-mesh sieve into a pourable vessel. Skim any foam." },
+        { "id": "s6", "title": "Fill the jars", "content": "Divide custard among the 6 jars, leaving ½ inch of headspace. Cap with lids and rings — finger-tight only." },
+        { "id": "s7", "title": "Sous vide", "content": "Lower jars into the 176°F bath. Cook for 1 hour.", "timerSeconds": 3600 },
+        { "id": "s8", "title": "Ice bath and chill", "content": "Transfer to an ice bath for 15 minutes. Refrigerate at least 4 hours, ideally overnight.", "timerSeconds": 14400 },
+        { "id": "s9", "title": "Brûlée and serve", "content": "Sprinkle 1 tbsp of turbinado sugar evenly across each. Torch in tight circles until deep amber. Rest 1 minute." }
+      ],
+      "notes": [
+        { "title": "Why 176°F / 80°C", "body": "Sweet spot for crème brûlée texture — yolks set without scrambling, no skin, no grain." },
+        { "title": "Holding tolerance", "body": "Up to 90 min in the bath is fine, 2 hours max." },
+        { "title": "Instant coffee dosing", "body": "1 tbsp = mild. 2 tbsp = balanced. 3 tbsp = strong. Best brands: Mount Hagen, Starbucks VIA Italian Roast, Nescafé Gold, Waka." },
+        { "title": "Make-ahead", "body": "Custards hold 3 days in the fridge before brûlée. Don't torch until serving." }
+      ]
+    },
+    {
+      "id": "mexican-meat-slop-v1",
+      "title": "Mexican Meat Slop",
+      "version": "v1",
+      "icon": "🌶️",
+      "accent": "#A0341B",
+      "description": "A workhorse — tacos, burritos, nachos, or over rice. Sun-dried tomatoes and chipotles do the heavy lifting.",
+      "baseServings": 4,
+      "activeMinutes": 25,
+      "totalMinutes": 30,
+      "tags": ["weeknight", "beef"],
+      "ingredients": [
+        { "id": "i1", "name": "ground beef", "amount": 1, "unit": "lb" },
+        { "id": "i2", "name": "diced onion", "amount": 0.5, "unit": "cup" },
+        { "id": "i3", "name": "cumin", "amount": 1.5, "unit": "tbsp" },
+        { "id": "i4", "name": "paprika", "amount": 1, "unit": "tsp" },
+        { "id": "i5", "name": "garlic powder (to taste)", "amount": 1, "unit": "tsp" },
+        { "id": "i6", "name": "taco seasoning", "amount": 3, "unit": "tbsp" },
+        { "id": "i7", "name": "chipotle peppers in adobo (chopped, with sauce)", "amount": 2, "unit": "tbsp" },
+        { "id": "i8", "name": "sun-dried tomatoes (chopped)", "amount": 0.25, "unit": "cup" },
+        { "id": "i9", "name": "beef stock", "amount": 0.5, "unit": "cup" },
+        { "id": "i10", "name": "salt and pepper", "amount": 1, "unit": "pinch" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Sweat the onion", "content": "Cook diced onion in a pan over medium heat until softened and translucent, ~3 min." },
+        { "id": "s2", "title": "Brown the beef", "content": "Add ground beef, break up with a spoon, brown fully." },
+        { "id": "s3", "title": "Add spices", "content": "Add cumin, paprika, garlic powder, taco seasoning, salt, and pepper. Stir to combine." },
+        { "id": "s4", "title": "Add aromatics", "content": "Stir in sun-dried tomatoes and chipotles with adobo sauce. Cook 2–3 minutes." },
+        { "id": "s5", "title": "Simmer", "content": "Pour in beef stock, simmer 5–7 minutes until liquid is mostly absorbed. Taste and adjust seasoning.", "timerSeconds": 420 }
+      ],
+      "notes": [
+        { "title": "Serving", "body": "Great for tacos, burritos, nachos, or over rice." },
+        { "title": "Heat dial", "body": "Two chipotles = noticeable warmth. Bump to three if you want sweat." }
+      ]
+    },
+    {
+      "id": "yukon-mash-v1",
+      "title": "Protein Mashed Potatoes",
+      "version": "v1",
+      "icon": "🥔",
+      "accent": "#8B7B3F",
+      "description": "Yukon Golds with cottage cheese and Fairlife doing the protein work. Ricer, not mixer — gluey potatoes are a tragedy.",
+      "baseServings": 6,
+      "servingsLabel": "¾ cup portions",
+      "activeMinutes": 30,
+      "totalMinutes": 45,
+      "tags": ["side", "high-protein"],
+      "ingredients": [
+        { "id": "i1", "name": "Yukon Gold potatoes (peeled, cubed)", "amount": 2, "unit": "lb" },
+        { "id": "i2", "name": "whole garlic cloves", "amount": 4, "unit": "whole" },
+        { "id": "i3", "name": "butter (melted)", "amount": 2, "unit": "tbsp" },
+        { "id": "i4", "name": "cottage cheese", "amount": 0.5, "unit": "cup" },
+        { "id": "i5", "name": "Fairlife protein skim milk", "amount": 0.5, "unit": "cup" },
+        { "id": "i6", "name": "sour cream or lite cream cheese", "amount": 1.5, "unit": "tbsp" },
+        { "id": "i7", "name": "salt", "amount": 1, "unit": "tsp" },
+        { "id": "i8", "name": "white pepper", "amount": 0.25, "unit": "tsp" },
+        { "id": "i9", "name": "onion salt", "amount": 0.5, "unit": "tsp" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Boil", "content": "Boil potatoes and whole garlic cloves in well-salted water until fork-tender, ~15–20 min.", "timerSeconds": 900 },
+        { "id": "s2", "title": "Drain and dry", "content": "Drain. Return to hot pot for a minute to evaporate residual water." },
+        { "id": "s3", "title": "Blend dairy", "content": "Blend cottage cheese, Fairlife, sour cream (or lite cream cheese), and butter until completely smooth — no curds." },
+        { "id": "s4", "title": "Rice", "content": "Pass potatoes and softened garlic through a ricer back into the pot." },
+        { "id": "s5", "title": "Fold and season", "content": "Fold in the smooth dairy mixture. Season with salt, white pepper, and onion salt to taste." }
+      ],
+      "notes": [
+        { "title": "Texture rule", "body": "Ricer only. Hand mixer breaks the starch and turns this into glue." },
+        { "title": "Critical step", "body": "Dairy mixture must be blended completely smooth before folding in. No shortcuts." },
+        { "title": "White pepper", "body": "Keeps the color clean and adds a subtle, earthy heat that pairs well with the creaminess." }
+      ]
+    },
+    {
+      "id": "carne-asada-v1",
+      "title": "Carne Asada",
+      "version": "v1",
+      "badge": "Cross Rib",
+      "icon": "🥩",
+      "accent": "#7A2E2E",
+      "description": "Thin-sliced cross rib with citrus, cilantro, and a non-traditional splash of soy for umami. Cast iron, screaming hot.",
+      "baseServings": 4,
+      "activeMinutes": 20,
+      "totalMinutes": 200,
+      "tags": ["main", "beef", "grill"],
+      "ingredients": [
+        { "id": "i1", "name": "cross rib (thin sliced)", "amount": 2, "unit": "lb" },
+        { "id": "i2", "name": "lime juice", "amount": 0.25, "unit": "cup" },
+        { "id": "i3", "name": "orange juice", "amount": 0.25, "unit": "cup" },
+        { "id": "i4", "name": "olive oil", "amount": 3, "unit": "tbsp" },
+        { "id": "i5", "name": "garlic cloves (minced)", "amount": 5, "unit": "whole" },
+        { "id": "i6", "name": "cumin", "amount": 1.5, "unit": "tsp" },
+        { "id": "i7", "name": "chili powder", "amount": 1, "unit": "tsp" },
+        { "id": "i8", "name": "smoked paprika", "amount": 0.5, "unit": "tsp" },
+        { "id": "i9", "name": "black pepper", "amount": 0.5, "unit": "tsp" },
+        { "id": "i10", "name": "kosher salt", "amount": 1.5, "unit": "tsp" },
+        { "id": "i11", "name": "cilantro (chopped)", "amount": 0.33, "unit": "cup" },
+        { "id": "i12", "name": "jalapeño (seeded, minced)", "amount": 1, "unit": "whole" },
+        { "id": "i13", "name": "soy sauce", "amount": 1, "unit": "tbsp" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Make marinade", "content": "Whisk all marinade ingredients together. Add meat, coat well." },
+        { "id": "s2", "title": "Marinate", "content": "Refrigerate 2–3 hours. Max 4 — citrus starts breaking down texture beyond that.", "timerSeconds": 9000 },
+        { "id": "s3", "title": "Temper", "content": "Pull from fridge, pat dry, rest at room temp 15 minutes.", "timerSeconds": 900 },
+        { "id": "s4", "title": "Sear", "content": "Cast iron screaming hot. 2 minutes per side for deep char.", "timerSeconds": 120 },
+        { "id": "s5", "title": "Rest and slice", "content": "Rest 5 minutes. Slice against the grain. Finish with fresh lime and reserved cilantro.", "timerSeconds": 300 }
+      ],
+      "notes": [
+        { "title": "Soy sauce", "body": "Adds umami depth without making it taste Asian. Trust the process." },
+        { "title": "Heat matters", "body": "If the pan isn't smoking, the meat steams instead of searing. Wait for it." }
+      ]
+    },
+    {
+      "id": "egg-salad-v6",
+      "title": "Ken's Egg Salad",
+      "version": "v6",
+      "badge": "Homemade",
+      "icon": "🥚",
+      "accent": "#9C7C2E",
+      "description": "Diced precise (¼\"), Dijon-forward, with homemade pickled celery and onions doing the work. Self-referential — pulls from your pickled celery recipe.",
+      "baseServings": 4,
+      "activeMinutes": 20,
+      "totalMinutes": 80,
+      "tags": ["lunch", "make-ahead"],
+      "ingredients": [
+        { "id": "i1", "name": "hard-boiled eggs (¼\" diced)", "amount": 6, "unit": "whole", "section": "Base" },
+        { "id": "i2", "name": "light mayonnaise", "amount": 3, "unit": "tbsp", "section": "Base" },
+        { "id": "i3", "name": "Dijon mustard (or champagne Dijon)", "amount": 1.25, "unit": "tbsp", "section": "Base" },
+        { "id": "i4", "name": "salt and pepper, to taste", "amount": 1, "unit": "pinch", "section": "Seasonings" },
+        { "id": "i5", "name": "celery salt, to taste", "amount": 1, "unit": "pinch", "section": "Seasonings" },
+        { "id": "i6", "name": "garlic salt, to taste", "amount": 1, "unit": "pinch", "section": "Seasonings" },
+        { "id": "i7", "name": "onion salt, to taste", "amount": 1, "unit": "pinch", "section": "Seasonings" },
+        { "id": "i8", "name": "paprika", "amount": 0.5, "unit": "tsp", "section": "Seasonings" },
+        { "id": "i9", "name": "Grillo's Hot Pickle Spears (¼\" diced)", "amount": 1, "unit": "tbsp", "section": "Mix-Ins" },
+        { "id": "i10", "name": "homemade pickled celery", "amount": 1, "unit": "tbsp", "section": "Mix-Ins" },
+        { "id": "i11", "name": "homemade pickled onions", "amount": 1, "unit": "tbsp", "section": "Mix-Ins" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Boil and dice", "content": "Hard boil eggs, peel, and dice into ¼-inch pieces." },
+        { "id": "s2", "title": "Make the dressing", "content": "In a medium bowl, combine mayonnaise and Dijon mustard. Mix until smooth." },
+        { "id": "s3", "title": "Fold in eggs", "content": "Add diced eggs to the dressing and fold gently to coat." },
+        { "id": "s4", "title": "Season", "content": "Season with salt, pepper, celery salt, garlic salt, onion salt, and paprika. Stir to combine." },
+        { "id": "s5", "title": "Add mix-ins", "content": "Fold in diced hot pickles, pickled celery, and pickled onions." },
+        { "id": "s6", "title": "Rest", "content": "Cover and refrigerate at least 1 hour to allow flavors to combine before serving.", "timerSeconds": 3600 }
+      ],
+      "notes": [
+        { "title": "Milder version", "body": "Substitute regular dill pickles for Grillo's Hot." },
+        { "title": "Self-referential", "body": "This consumes your homemade pickled celery and onions — the pantry ecosystem at work." }
+      ]
+    },
+    {
+      "id": "asian-ground-beef-stir-fry-v1",
+      "title": "Asian-Inspired Ground Beef Stir-Fry",
+      "version": "v1",
+      "icon": "🥢",
+      "accent": "#5C3A1E",
+      "description": "A quick, savory weeknight stir-fry with Yoshida's marinade and Momofuku Chili Crunch, served over rice.",
+      "baseServings": 4,
+      "activeMinutes": 20,
+      "totalMinutes": 25,
+      "tags": ["weeknight", "beef", "asian"],
+      "ingredients": [
+        { "id": "i1", "name": "ground beef", "amount": 1, "unit": "lb" },
+        { "id": "i2", "name": "Mr. Yoshida's Marinade & Cooking Sauce", "amount": 1.25, "unit": "tbsp" },
+        { "id": "i3", "name": "Momofuku Chili Crunch chili oil, to taste", "amount": 1, "unit": "tbsp" },
+        { "id": "i4", "name": "shallots (thinly sliced lengthwise)", "amount": 2, "unit": "whole" },
+        { "id": "i5", "name": "carrots (thinly sliced)", "amount": 1, "unit": "cup" },
+        { "id": "i6", "name": "cabbage / coleslaw mix", "amount": 2, "unit": "cup" },
+        { "id": "i7", "name": "rice vinegar", "amount": 0.75, "unit": "tbsp" },
+        { "id": "i8", "name": "salt, pepper, garlic salt, to taste", "amount": 1, "unit": "pinch" },
+        { "id": "i9", "name": "sesame seeds (for garnish)", "amount": 1, "unit": "tsp" },
+        { "id": "i10", "name": "cooked rice (for serving)", "amount": 2, "unit": "cup" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Sear the beef", "content": "Sear the ground beef in a hot pan until golden brown. Season with salt, pepper, and garlic salt." },
+        { "id": "s2", "title": "Add shallots", "content": "Add the sliced shallots and stir to combine." },
+        { "id": "s3", "title": "Add carrots", "content": "Add the carrots and stir." },
+        { "id": "s4", "title": "Add cabbage", "content": "Add the cabbage mix last and stir. Let everything cook down until the vegetables are tender." },
+        { "id": "s5", "title": "Sauce", "content": "Pour in the Mr. Yoshida's sauce and let it come to a boil, allowing some liquid to cook off." },
+        { "id": "s6", "title": "Vinegar", "content": "Add the rice vinegar and stir. Let the sauce thicken slightly." },
+        { "id": "s7", "title": "Finish with chili crunch", "content": "Finish with Momofuku Chili Crunch to taste." },
+        { "id": "s8", "title": "Plate", "content": "Serve over rice and top with sesame seeds." }
+      ],
+      "notes": [
+        { "title": "Vegetable swaps", "body": "Any quick-cooking vegetables can be substituted for the carrots and cabbage." },
+        { "title": "Heat dial", "body": "Adjust the chili crunch to your preferred heat level." }
+      ]
+    },
+    {
+      "id": "bacon-egg-cheese-rice-paper-spiral-v1",
+      "title": "Bacon Egg & Cheese Rice Paper Spiral",
+      "version": "v1",
+      "icon": "🥓",
+      "accent": "#B85C2E",
+      "description": "A crispy, gooey, melty breakfast treat inspired by NYC bodega bacon egg and cheese sandwiches.",
+      "baseServings": 2,
+      "servingsLabel": "spirals",
+      "activeMinutes": 10,
+      "totalMinutes": 30,
+      "tags": ["breakfast", "eggs"],
+      "ingredients": [
+        { "id": "i1", "name": "rice paper sheets", "amount": 3, "unit": "whole" },
+        { "id": "i2", "name": "eggs (4 for filling, 1 for dipping)", "amount": 5, "unit": "whole" },
+        { "id": "i3", "name": "bacon or turkey bacon (cooked, chopped)", "amount": 2, "unit": "whole" },
+        { "id": "i4", "name": "shredded mozzarella", "amount": 0.5, "unit": "cup" },
+        { "id": "i5", "name": "everything bagel seasoning", "amount": 1, "unit": "tbsp" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Scramble", "content": "Scramble 4 eggs until just set, soft and fluffy — not dry. Set aside." },
+        { "id": "s2", "title": "Prep rice paper", "content": "Whisk the remaining egg on a plate — this is your egg dip. One at a time, dip each rice paper sheet into the beaten egg, coating evenly. Lay them out on a lightly oiled cutting board, slightly overlapping to create one large sheet." },
+        { "id": "s3", "title": "Layer fillings", "content": "Layer the scrambled eggs down the center, followed by chopped bacon and shredded mozzarella." },
+        { "id": "s4", "title": "Roll & shape", "content": "Roll up tightly into a cylinder, sealing the edge as you go. Then gently curl it around itself into a compact spiral." },
+        { "id": "s5", "title": "Season", "content": "Brush the top with any leftover egg and sprinkle generously with everything bagel seasoning." },
+        { "id": "s6", "title": "Bake", "content": "Bake at 400°F for 15–20 minutes until golden and crisp.", "timerSeconds": 1080 }
+      ],
+      "notes": [
+        { "title": "Tip", "body": "Work quickly with the egg-dipped rice paper before it gets too sticky." },
+        { "title": "Bacon prep", "body": "Make sure your bacon is fully cooked and chopped before starting." }
+      ]
+    },
+    {
+      "id": "bread-butter-pickles-v1",
+      "title": "Bread & Butter Pickles",
+      "version": "v1",
+      "badge": "Food Wishes",
+      "icon": "🥒",
+      "accent": "#6B7A2E",
+      "description": "Chef John's classic refrigerator pickle — sweet, tangy, with a slow turmeric warmth. Makes about 2 pints.",
+      "baseServings": 16,
+      "servingsLabel": "¼-cup servings",
+      "activeMinutes": 30,
+      "totalMinutes": 1620,
+      "tags": ["pickle", "preserved", "make-ahead"],
+      "ingredients": [
+        { "id": "i1", "name": "pickling cucumbers (or other firm, small cucumbers)", "amount": 2, "unit": "lb", "section": "Cucumbers" },
+        { "id": "i2", "name": "yellow onion (sliced)", "amount": 0.5, "unit": "whole", "section": "Cucumbers" },
+        { "id": "i3", "name": "red jalapeño peppers (sliced)", "amount": 2, "unit": "whole", "section": "Cucumbers" },
+        { "id": "i4", "name": "kosher salt", "amount": 3, "unit": "tbsp", "section": "Cucumbers" },
+        { "id": "i5", "name": "white distilled vinegar", "amount": 2, "unit": "cup", "section": "Brine" },
+        { "id": "i6", "name": "granulated sugar", "amount": 2, "unit": "cup", "section": "Brine" },
+        { "id": "i7", "name": "water", "amount": 0.25, "unit": "cup", "section": "Brine" },
+        { "id": "i8", "name": "mustard seeds", "amount": 1, "unit": "tbsp", "section": "Brine" },
+        { "id": "i9", "name": "celery seeds", "amount": 1, "unit": "tsp", "section": "Brine" },
+        { "id": "i10", "name": "black peppercorns", "amount": 1, "unit": "tsp", "section": "Brine" },
+        { "id": "i11", "name": "turmeric", "amount": 0.5, "unit": "tsp", "section": "Brine" },
+        { "id": "i12", "name": "ground cloves", "amount": 0.125, "unit": "tsp", "section": "Brine" },
+        { "id": "i13", "name": "garlic cloves (sliced)", "amount": 2, "unit": "whole", "section": "Brine" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Slice and salt", "content": "Slice cucumbers into ¼-inch thick rounds. Combine in a large bowl with the sliced onion and jalapeños. Toss with the kosher salt, cover, and let sit at room temperature for 2 hours. This draws out excess moisture for crunchier pickles.", "timerSeconds": 7200 },
+        { "id": "s2", "title": "Drain", "content": "After 2 hours, drain the cucumbers well in a colander. Do not rinse. Pat dry with paper towels if desired." },
+        { "id": "s3", "title": "Make the brine", "content": "In a saucepan, combine the vinegar, sugar, water, mustard seeds, celery seeds, peppercorns, turmeric, cloves, and garlic. Bring to a boil over medium-high heat, stirring to dissolve the sugar." },
+        { "id": "s4", "title": "Combine", "content": "Add the drained cucumber mixture to the hot brine. Stir to combine and bring just back to a simmer." },
+        { "id": "s5", "title": "Jar", "content": "Transfer the pickles and brine to clean mason jars, making sure the cucumbers are fully submerged in liquid. Let cool to room temperature." },
+        { "id": "s6", "title": "Refrigerate", "content": "Cover and refrigerate. The pickles are ready to eat after 24 hours but improve with a few days of resting. Best flavor develops after 1 week.", "timerSeconds": 86400 }
+      ],
+      "notes": [
+        { "title": "Storage", "body": "Keeps refrigerated for several months." },
+        { "title": "Sugar", "body": "Can reduce to 1–1.5 cups for less sweet pickles." },
+        { "title": "Heat", "body": "Jalapeños are optional; omit for milder pickles." },
+        { "title": "Canning", "body": "For shelf-stable pickles, process in a water bath for 10 minutes. Refrigerator pickles need only soap-and-water cleaning of jars." }
+      ]
+    },
+    {
+      "id": "caramelized-onion-pasta-v1",
+      "title": "Caramelized Onion Pasta",
+      "version": "v1",
+      "icon": "🍝",
+      "accent": "#8C5A2A",
+      "description": "Jammy onions, chili crisp, cream, and a heavy parmesan finish. The original cream version — silky and rich.",
+      "baseServings": 3,
+      "activeMinutes": 25,
+      "totalMinutes": 35,
+      "tags": ["pasta", "weeknight", "vegetarian"],
+      "ingredients": [
+        { "id": "i1", "name": "large onion (thinly sliced)", "amount": 1, "unit": "whole" },
+        { "id": "i2", "name": "garlic cloves (minced)", "amount": 4, "unit": "whole" },
+        { "id": "i3", "name": "chili crisp", "amount": 2, "unit": "tbsp" },
+        { "id": "i4", "name": "cream or coconut milk (room temperature)", "amount": 1, "unit": "cup" },
+        { "id": "i5", "name": "soy sauce (optional)", "amount": 1, "unit": "tbsp" },
+        { "id": "i6", "name": "fresh Parmesan cheese (grated)", "amount": 0.5, "unit": "cup" },
+        { "id": "i7", "name": "pasta of your choice", "amount": 8, "unit": "oz" },
+        { "id": "i8", "name": "butter", "amount": 2, "unit": "tbsp" },
+        { "id": "i9", "name": "olive oil", "amount": 1, "unit": "tbsp" },
+        { "id": "i10", "name": "paprika", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" },
+        { "id": "i11", "name": "garlic powder", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" },
+        { "id": "i12", "name": "salt", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" },
+        { "id": "i13", "name": "pepper", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" },
+        { "id": "i14", "name": "Italian seasoning", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Mise en place", "content": "Slice your onion, mince the garlic (use fresh), and measure out all your seasonings. Bring the cream or coconut milk to room temperature." },
+        { "id": "s2", "title": "Caramelize", "content": "Heat 2 tbsp butter + 1 tbsp olive oil in a large skillet over medium. Add the onions and let them cook for 15–20 minutes, stirring occasionally, until golden and jammy. If they stick, hit them with a splash of water.", "timerSeconds": 1080 },
+        { "id": "s3", "title": "Cook pasta", "content": "While onions caramelize, boil a pot of salted water and cook pasta until al dente. Drain, but reserve some pasta water — liquid gold." },
+        { "id": "s4", "title": "Build the sauce", "content": "When onions are deeply golden, stir in the garlic and seasonings. Bloom for a minute, add chili crisp and sauté another minute. Pour in cream (or coconut milk). Simmer for a few minutes, then add the parmesan." },
+        { "id": "s5", "title": "Toss", "content": "Add pasta to the sauce and toss to coat. Use reserved pasta water to loosen if too thick — silky, not sticky." },
+        { "id": "s6", "title": "Serve", "content": "Serve hot with an extra spoon of chili crisp on top and parsley if you're feeling fancy." }
+      ],
+      "notes": [
+        { "title": "Onion patience", "body": "15–20 minutes of caramelization is the floor, not the ceiling. Deep golden = deep flavor." }
+      ]
+    },
+    {
+      "id": "caramelized-onion-pasta-protein-v1",
+      "title": "Caramelized Onion Pasta",
+      "version": "v1",
+      "badge": "High Protein / Experimental",
+      "icon": "🍝",
+      "accent": "#B07A2E",
+      "description": "Same jammy onions and chili crisp, but with blended cottage cheese standing in for cream. ~25g extra protein, no one will know.",
+      "baseServings": 3,
+      "activeMinutes": 30,
+      "totalMinutes": 40,
+      "tags": ["pasta", "high-protein", "experimental"],
+      "ingredients": [
+        { "id": "i1", "name": "large onion (thinly sliced)", "amount": 1, "unit": "whole" },
+        { "id": "i2", "name": "garlic cloves (minced)", "amount": 4, "unit": "whole" },
+        { "id": "i3", "name": "chili crisp", "amount": 2, "unit": "tbsp" },
+        { "id": "i4", "name": "low-fat cottage cheese", "amount": 1, "unit": "cup" },
+        { "id": "i5", "name": "skim milk (to thin the sauce)", "amount": 0.25, "unit": "cup" },
+        { "id": "i6", "name": "soy sauce (optional)", "amount": 1, "unit": "tbsp" },
+        { "id": "i7", "name": "fresh Parmesan cheese (grated)", "amount": 0.5, "unit": "cup" },
+        { "id": "i8", "name": "pasta of your choice", "amount": 8, "unit": "oz" },
+        { "id": "i9", "name": "butter", "amount": 2, "unit": "tbsp" },
+        { "id": "i10", "name": "olive oil", "amount": 1, "unit": "tbsp" },
+        { "id": "i11", "name": "paprika", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" },
+        { "id": "i12", "name": "garlic powder", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" },
+        { "id": "i13", "name": "salt", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" },
+        { "id": "i14", "name": "pepper", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" },
+        { "id": "i15", "name": "Italian seasoning", "amount": 1, "unit": "tsp", "section": "Seasonings (1 tsp each)" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Mise en place", "content": "Slice onion, mince garlic, measure seasonings. Blend cottage cheese and skim milk until completely smooth — this is your creamy base." },
+        { "id": "s2", "title": "Caramelize", "content": "Heat butter + olive oil over medium. Add onions and cook 15–20 minutes until golden and jammy. Splash with water if they stick.", "timerSeconds": 1080 },
+        { "id": "s3", "title": "Cook pasta", "content": "Boil pasta to al dente in salted water. Reserve some pasta water before draining." },
+        { "id": "s4", "title": "Build the sauce", "content": "Stir garlic and seasonings into golden onions, bloom for a minute. Add chili crisp, sauté one more minute. REMOVE FROM HEAT, let cool 1–2 minutes (this prevents curdling), then pour in the blended cottage cheese mixture. Stir, return to LOW heat, warm through gently — do not boil. Add parmesan." },
+        { "id": "s5", "title": "Toss", "content": "Add pasta and toss. Loosen with reserved pasta water as needed." },
+        { "id": "s6", "title": "Serve", "content": "Top with extra chili crisp and parsley." }
+      ],
+      "notes": [
+        { "title": "Protein boost", "body": "The cottage cheese swap adds roughly 25g of protein to the entire dish compared to the cream version." },
+        { "title": "Key tip", "body": "Blend cottage cheese until silky smooth — no one will know it's there. Let the pan cool slightly before adding it to prevent curdling." }
+      ]
+    },
+    {
+      "id": "chicken-gnocchi-soup-v1",
+      "title": "Chicken Gnocchi Soup",
+      "version": "v1",
+      "icon": "🥣",
+      "accent": "#A85226",
+      "description": "Creamy, cozy, one-pot. Chicken seared in sun-dried tomato oil, finished with cream, gnocchi, spinach, basil, and a parmesan rind.",
+      "baseServings": 6,
+      "activeMinutes": 35,
+      "totalMinutes": 70,
+      "tags": ["soup", "chicken", "comfort"],
+      "ingredients": [
+        { "id": "i1", "name": "chicken breasts", "amount": 3, "unit": "whole", "section": "Chicken" },
+        { "id": "i2", "name": "sun-dried tomato oil (from the jar)", "amount": 2, "unit": "tbsp", "section": "Chicken" },
+        { "id": "i3", "name": "seasoning salt", "amount": 1, "unit": "tbsp", "section": "Chicken" },
+        { "id": "i4", "name": "paprika", "amount": 1, "unit": "tbsp", "section": "Chicken" },
+        { "id": "i5", "name": "garlic powder", "amount": 1, "unit": "tbsp", "section": "Chicken" },
+        { "id": "i6", "name": "Italian seasoning", "amount": 2, "unit": "tsp", "section": "Chicken" },
+        { "id": "i7", "name": "black pepper", "amount": 2, "unit": "tsp", "section": "Chicken" },
+        { "id": "i8", "name": "olive oil", "amount": 4, "unit": "tbsp", "section": "Soup Base" },
+        { "id": "i9", "name": "yellow onion (diced)", "amount": 1.5, "unit": "cup", "section": "Soup Base" },
+        { "id": "i10", "name": "celery (diced)", "amount": 1, "unit": "cup", "section": "Soup Base" },
+        { "id": "i11", "name": "carrots (diced)", "amount": 1, "unit": "cup", "section": "Soup Base" },
+        { "id": "i12", "name": "garlic cloves (sliced)", "amount": 10, "unit": "whole", "section": "Soup Base" },
+        { "id": "i13", "name": "sun-dried tomatoes (chopped)", "amount": 0.33, "unit": "cup", "section": "Soup Base" },
+        { "id": "i14", "name": "tomato paste", "amount": 2, "unit": "tbsp", "section": "Soup Base" },
+        { "id": "i15", "name": "chicken broth", "amount": 5, "unit": "cup", "section": "Soup Base" },
+        { "id": "i16", "name": "heavy cream (room temp)", "amount": 1.5, "unit": "cup", "section": "Soup Base" },
+        { "id": "i17", "name": "salt", "amount": 1, "unit": "tsp", "section": "Veggie Seasonings" },
+        { "id": "i18", "name": "black pepper", "amount": 2, "unit": "tsp", "section": "Veggie Seasonings" },
+        { "id": "i19", "name": "Italian seasoning", "amount": 2, "unit": "tsp", "section": "Veggie Seasonings" },
+        { "id": "i20", "name": "bay leaves", "amount": 2, "unit": "whole", "section": "Veggie Seasonings" },
+        { "id": "i21", "name": "chili flakes (optional)", "amount": 2, "unit": "tsp", "section": "Veggie Seasonings" },
+        { "id": "i22", "name": "gnocchi", "amount": 1, "unit": "lb", "section": "Finishing" },
+        { "id": "i23", "name": "fresh spinach", "amount": 1.5, "unit": "cup", "section": "Finishing" },
+        { "id": "i24", "name": "fresh basil (chopped)", "amount": 3, "unit": "tbsp", "section": "Finishing" },
+        { "id": "i25", "name": "fresh thyme (chopped)", "amount": 1, "unit": "tbsp", "section": "Finishing" },
+        { "id": "i26", "name": "freshly grated parmesan", "amount": 0.75, "unit": "cup", "section": "Finishing" },
+        { "id": "i27", "name": "parmesan rind (optional)", "amount": 1, "unit": "whole", "section": "Finishing" },
+        { "id": "i28", "name": "lemon (juice of half)", "amount": 0.5, "unit": "whole", "section": "Finishing" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Marinate the chicken", "content": "Toss the chicken with sun-dried tomato oil and all the chicken seasonings. Let it marinate for as long as your patience can handle — or go straight to the pot." },
+        { "id": "s2", "title": "Sear", "content": "Heat 4 tbsp olive oil in a large Dutch oven over medium-high heat. Add chicken and cook until nicely browned on both sides. It should not yet be cooked through. Remove and set aside." },
+        { "id": "s3", "title": "Sweat the vegetables", "content": "In the same pot, add onion, celery, carrots, sun-dried tomatoes, garlic, and all veggie seasonings. Cook over medium for 8–10 minutes, stirring, until everything is soft. Stir in tomato paste and cook 2 minutes." },
+        { "id": "s4", "title": "Simmer the broth", "content": "Pour in chicken broth and bring to a gentle simmer for 15 minutes. While it simmers, chop or shred the chicken. Add the chicken back, then slowly stir in the cream. Simmer another 5 minutes.", "timerSeconds": 900 },
+        { "id": "s5", "title": "Finish", "content": "Add gnocchi, parmesan, parmesan rind (if using), spinach, basil, and thyme. Squeeze in lemon juice. Simmer 5–10 minutes.", "timerSeconds": 600 },
+        { "id": "s6", "title": "Serve", "content": "Ladle into bowls and finish with black pepper, chili flakes, extra parmesan, and more basil. Serve with warm buttered bread." }
+      ],
+      "notes": [
+        { "title": "Cream temperature", "body": "Bring cream to room temp before adding to prevent the soup from breaking when it hits the hot broth." }
+      ]
+    },
+    {
+      "id": "chicken-protein-cheese-dip-v1",
+      "title": "Chicken Protein Cheese Dip",
+      "version": "v1",
+      "icon": "🧀",
+      "accent": "#C0782E",
+      "description": "Cottage-cheese-blended cheese dip with chunk chicken, Hatch chilies, and adobo. Tailgate-friendly, weirdly high protein.",
+      "baseServings": 6,
+      "activeMinutes": 15,
+      "totalMinutes": 20,
+      "tags": ["snack", "high-protein", "appetizer"],
+      "ingredients": [
+        { "id": "i1", "name": "cottage cheese (low-fat)", "amount": 1, "unit": "cup", "section": "Blender Base" },
+        { "id": "i2", "name": "Trader Joe's Three Cheese Blend", "amount": 0.5, "unit": "cup", "section": "Blender Base" },
+        { "id": "i3", "name": "mild taco seasoning", "amount": 1.25, "unit": "tbsp", "section": "Blender Base" },
+        { "id": "i4", "name": "water", "amount": 1, "unit": "tbsp", "section": "Blender Base" },
+        { "id": "i5", "name": "jalapeños with some juice", "amount": 3, "unit": "whole", "section": "Blender Base" },
+        { "id": "i6", "name": "can chunk chicken", "amount": 1, "unit": "whole", "section": "Sauce Pot" },
+        { "id": "i7", "name": "can Hatch green chilies", "amount": 1, "unit": "whole", "section": "Sauce Pot" },
+        { "id": "i8", "name": "adobo peppers (to taste)", "amount": 1, "unit": "tbsp", "section": "Sauce Pot" },
+        { "id": "i9", "name": "salt (to taste)", "amount": 1, "unit": "pinch", "section": "Sauce Pot" },
+        { "id": "i10", "name": "garlic (to taste)", "amount": 1, "unit": "pinch", "section": "Sauce Pot" },
+        { "id": "i11", "name": "garlic powder (to taste)", "amount": 1, "unit": "pinch", "section": "Sauce Pot" },
+        { "id": "i12", "name": "onion powder (to taste)", "amount": 1, "unit": "pinch", "section": "Sauce Pot" },
+        { "id": "i13", "name": "cayenne pepper (small amount)", "amount": 1, "unit": "pinch", "section": "Sauce Pot" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Blend the base", "content": "Add cottage cheese, Trader Joe's Three Cheese Blend, taco seasoning, water, and jalapeños with juice to a blender. Blend until smooth." },
+        { "id": "s2", "title": "Transfer", "content": "Transfer blended cheese mixture to a sauce pot over medium heat." },
+        { "id": "s3", "title": "Add proteins", "content": "Add the can of chunk chicken and the can of Hatch green chilies to the pot." },
+        { "id": "s4", "title": "Season", "content": "Season with adobo peppers, salt, garlic, garlic powder, onion powder, and a small amount of cayenne to taste." },
+        { "id": "s5", "title": "Heat through", "content": "Stir to combine and heat through until warmed and well incorporated. Serve warm." }
+      ]
+    },
+    {
+      "id": "coconut-macaroons-v1",
+      "title": "Coconut Macaroons",
+      "version": "v1",
+      "badge": "Once Upon a Chef",
+      "icon": "🥥",
+      "accent": "#8B6F47",
+      "description": "Soft and chewy on the inside, crisp and golden on the outside. Optional chocolate-dipped finish.",
+      "baseServings": 26,
+      "servingsLabel": "cookies",
+      "activeMinutes": 20,
+      "totalMinutes": 45,
+      "tags": ["dessert", "cookies", "make-ahead"],
+      "ingredients": [
+        { "id": "i1", "name": "sweetened flaked coconut (Baker's Angel Flake recommended)", "amount": 14, "unit": "oz" },
+        { "id": "i2", "name": "sweetened condensed milk (¾ cup plus 2 tbsp)", "amount": 0.875, "unit": "cup" },
+        { "id": "i3", "name": "vanilla extract", "amount": 1, "unit": "tsp" },
+        { "id": "i4", "name": "large egg whites", "amount": 2, "unit": "whole" },
+        { "id": "i5", "name": "salt", "amount": 0.25, "unit": "tsp" },
+        { "id": "i6", "name": "semi-sweet chocolate (chopped, optional for dipping)", "amount": 4, "unit": "oz" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Preheat", "content": "Preheat the oven to 325°F (165°C). Set two oven racks near the center. Line two baking sheets with parchment paper." },
+        { "id": "s2", "title": "Mix coconut base", "content": "In a medium bowl, mix together the coconut, sweetened condensed milk, and vanilla extract. Set aside." },
+        { "id": "s3", "title": "Whip whites", "content": "In the bowl of an electric mixer, beat the egg whites and salt until stiff peaks form." },
+        { "id": "s4", "title": "Fold", "content": "Use a large rubber spatula to fold the egg whites into the coconut mixture until combined." },
+        { "id": "s5", "title": "Scoop", "content": "Using a mini ice cream scoop or two spoons, form heaping tablespoons of the mixture into mounds on the prepared baking sheets, spacing about 1 inch apart." },
+        { "id": "s6", "title": "Bake", "content": "Bake for 23–25 minutes, rotating the pans from top to bottom and front to back halfway through, until tops and edges are golden.", "timerSeconds": 1440 },
+        { "id": "s7", "title": "Cool", "content": "Let cool on the pans for a few minutes, then transfer to a wire rack to cool completely." },
+        { "id": "s8", "title": "Optional: chocolate dip", "content": "Melt chocolate in a microwave-safe bowl at medium power, 30-second intervals, until smooth. Dip the bottoms of cooled macaroons, return to the lined sheets, refrigerate 10 minutes to set." }
+      ],
+      "notes": [
+        { "title": "Parchment, not wax", "body": "Macaroons stick to wax paper. Use parchment." },
+        { "title": "Coconut brand", "body": "Baker's Angel Flake is recommended — there's variability between brands." },
+        { "title": "Storage", "body": "Keeps in an airtight container at room temp for about a week." },
+        { "title": "Freezing", "body": "Freeze undipped for up to 3 months. Thaw before dipping in chocolate." }
+      ]
+    },
+    {
+      "id": "gf-air-fryer-fried-chicken-v2",
+      "title": "GF Air Fryer Fried Chicken",
+      "version": "v2",
+      "badge": "Honey Garlic Ginger",
+      "icon": "🍗",
+      "accent": "#B85D1A",
+      "description": "Double-dredge cornstarch + crushed cornflakes for maximum crunch and adhesion. Fully gluten-free, finished with a sweet-savory honey garlic ginger dipping sauce.",
+      "baseServings": 4,
+      "activeMinutes": 30,
+      "totalMinutes": 60,
+      "tags": ["chicken", "gluten-free", "air-fryer"],
+      "ingredients": [
+        { "id": "i1", "name": "boneless skinless chicken thighs or breast", "amount": 1.5, "unit": "lb", "section": "Chicken" },
+        { "id": "i2", "name": "cornstarch (divided: ½ cup for dredge, ¼ cup for cornflake mix)", "amount": 0.75, "unit": "cup", "section": "Chicken" },
+        { "id": "i3", "name": "large eggs (beaten)", "amount": 2, "unit": "whole", "section": "Chicken" },
+        { "id": "i4", "name": "cornflakes (crushed to medium consistency)", "amount": 3, "unit": "cup", "section": "Chicken" },
+        { "id": "i5", "name": "cooking spray or oil mister", "amount": 1, "unit": "tbsp", "section": "Chicken" },
+        { "id": "i6", "name": "salt (½ tsp for chicken, ½ tsp for dredge)", "amount": 1, "unit": "tsp", "section": "Seasoning" },
+        { "id": "i7", "name": "black pepper (divided)", "amount": 0.5, "unit": "tsp", "section": "Seasoning" },
+        { "id": "i8", "name": "garlic powder", "amount": 1, "unit": "tsp", "section": "Seasoning" },
+        { "id": "i9", "name": "onion powder", "amount": 0.5, "unit": "tsp", "section": "Seasoning" },
+        { "id": "i10", "name": "smoked paprika", "amount": 0.5, "unit": "tsp", "section": "Seasoning" },
+        { "id": "i11", "name": "cayenne (optional, for heat)", "amount": 0.25, "unit": "tsp", "section": "Seasoning" },
+        { "id": "i12", "name": "honey", "amount": 0.25, "unit": "cup", "section": "Honey Garlic Ginger Sauce" },
+        { "id": "i13", "name": "gluten-free soy sauce or tamari", "amount": 2, "unit": "tbsp", "section": "Honey Garlic Ginger Sauce" },
+        { "id": "i14", "name": "rice vinegar", "amount": 1, "unit": "tbsp", "section": "Honey Garlic Ginger Sauce" },
+        { "id": "i15", "name": "garlic cloves (minced)", "amount": 3, "unit": "whole", "section": "Honey Garlic Ginger Sauce" },
+        { "id": "i16", "name": "fresh ginger (minced or grated)", "amount": 1, "unit": "tbsp", "section": "Honey Garlic Ginger Sauce" },
+        { "id": "i17", "name": "sesame oil", "amount": 1, "unit": "tsp", "section": "Honey Garlic Ginger Sauce" },
+        { "id": "i18", "name": "red pepper flakes (optional)", "amount": 1, "unit": "pinch", "section": "Honey Garlic Ginger Sauce" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Prep the chicken", "content": "Cut chicken into strips or chunks. For whole thighs or breasts, pound to 1-inch thickness or butterfly. Pat completely dry. Season directly with half the salt and pepper. Let rest 10–15 min at room temp.", "timerSeconds": 600 },
+        { "id": "s2", "title": "Set up breading stations", "content": "Crush cornflakes to medium (panko-sized) consistency. Dish 1: ½ cup cornstarch + remaining salt, pepper, garlic powder, onion powder, smoked paprika, cayenne. Dish 2: beaten eggs. Dish 3: crushed cornflakes + remaining ¼ cup cornstarch." },
+        { "id": "s3", "title": "Double dredge", "content": "Cornstarch (Dish 1, shake off excess) → egg (Dish 2, drip off) → cornflake mix (Dish 3, press firmly all sides). Place coated pieces on a wire rack while preparing the rest." },
+        { "id": "s4", "title": "Air fry — first side", "content": "Preheat air fryer to 385°F for 3–5 min. Arrange chicken in a single layer with space between pieces. Spray tops generously. Cook 8 minutes.", "timerSeconds": 480 },
+        { "id": "s5", "title": "Flip and finish", "content": "Flip carefully, spray again, cook 8 more minutes (16 total for 1-inch pieces). Verify internal temp reaches 165°F.", "timerSeconds": 480 },
+        { "id": "s6", "title": "Rest", "content": "Transfer to a wire rack over a sheet pan. Rest 4–6 minutes — lets steam escape, prevents sogginess.", "timerSeconds": 300 },
+        { "id": "s7", "title": "Sauce", "content": "Combine honey, soy sauce, rice vinegar, garlic, ginger, sesame oil, and red pepper flakes in a small saucepan. Heat over medium-low about 3 minutes, stirring, until combined. Keep warm." },
+        { "id": "s8", "title": "Serve", "content": "Serve chicken with sauce on the side for dipping. Coating it directly will soften the crust." }
+      ],
+      "notes": [
+        { "title": "Why double dredge", "body": "The cornstarch in the final coating gives the cornflakes something to grip. Single dredge works but adhesion is better." },
+        { "title": "Cornflake consistency", "body": "Aim for panko-sized pieces. Too fine loses texture; too coarse won't adhere." },
+        { "title": "Oil spray is essential", "body": "Without it, cornflakes stay pale and chewy rather than golden and crisp." },
+        { "title": "Verify GF", "body": "Check that your cornflakes and soy sauce are certified gluten-free." },
+        { "title": "Bone-in adjustment", "body": "For bone-in pieces, increase cook time to 22–28 minutes total, flipping halfway." }
+      ]
+    },
+    {
+      "id": "gf-french-beef-stew-v1",
+      "title": "GF French Beef Stew",
+      "version": "v1",
+      "badge": "Gluten-Free Adaptation",
+      "icon": "🍲",
+      "accent": "#5C3A1E",
+      "description": "Classic French beef stew with mushrooms — adapted GF using tapioca starch in place of flour. Long simmer, glossy finish.",
+      "baseServings": 6,
+      "activeMinutes": 40,
+      "totalMinutes": 180,
+      "tags": ["beef", "gluten-free", "stew", "comfort"],
+      "ingredients": [
+        { "id": "i1", "name": "beef chuck (cut into 2-inch pieces)", "amount": 3, "unit": "lb" },
+        { "id": "i2", "name": "bacon (chopped, GF certified)", "amount": 6, "unit": "whole" },
+        { "id": "i3", "name": "large onion (finely chopped)", "amount": 1, "unit": "whole" },
+        { "id": "i4", "name": "carrots (sliced)", "amount": 3, "unit": "whole" },
+        { "id": "i5", "name": "garlic cloves (minced)", "amount": 2, "unit": "whole" },
+        { "id": "i6", "name": "beef broth (GF certified)", "amount": 2, "unit": "cup" },
+        { "id": "i7", "name": "tomato paste", "amount": 2, "unit": "tbsp" },
+        { "id": "i8", "name": "mushrooms (quartered)", "amount": 1, "unit": "lb" },
+        { "id": "i9", "name": "tapioca starch", "amount": 3, "unit": "tbsp" },
+        { "id": "i10", "name": "olive oil", "amount": 3, "unit": "tbsp" },
+        { "id": "i11", "name": "bouquet garni (thyme, bay leaves, parsley)", "amount": 1, "unit": "whole" },
+        { "id": "i12", "name": "salt and pepper, to taste", "amount": 1, "unit": "pinch" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Crisp the bacon", "content": "Heat olive oil in a large pot over medium. Add bacon and cook until crisp. Remove and set aside." },
+        { "id": "s2", "title": "Brown the beef", "content": "Season the beef chunks with salt and pepper. In the same pot, brown in batches to ensure each piece is well-seared. Remove and set aside with the bacon." },
+        { "id": "s3", "title": "Sweat aromatics", "content": "In the same pot, add chopped onion, sliced carrots, and minced garlic. Cook until onion becomes translucent." },
+        { "id": "s4", "title": "Thicken with starch", "content": "Sprinkle the tapioca starch over the vegetables and stir well, ensuring even coating and scraping the fond off the bottom of the pot." },
+        { "id": "s5", "title": "Combine and simmer", "content": "Return beef and bacon to the pot. Stir in tomato paste, add bouquet garni. Pour in beef broth. Bring to a boil, then reduce to a simmer, cover, and cook gently for about 2 hours.", "timerSeconds": 7200 },
+        { "id": "s6", "title": "Mushrooms", "content": "About 30 minutes before the stew is done, sauté mushrooms in oil in a separate pan until golden. Add to the stew and continue to simmer.", "timerSeconds": 1800 }
+      ],
+      "notes": [
+        { "title": "Flour swap", "body": "Tapioca starch is a clean 1:1 substitute — thickens without going gummy and leaves the broth glossy. Arrowroot or potato starch break down over long simmers; if using those, stir in as a slurry during the last 30 minutes." },
+        { "title": "Bacon", "body": "Look for a GF-certified label or check the ingredient list — flavorings/smoke additives can introduce gluten." },
+        { "title": "Beef broth", "body": "Store-bought broths sometimes contain hydrolyzed wheat protein. Use GF-certified or homemade." }
+      ]
+    },
+    {
+      "id": "gyros-salad-v1",
+      "title": "Homemade Gyros Salad",
+      "version": "v1",
+      "icon": "🥗",
+      "accent": "#7A4B2E",
+      "description": "Air-fryer gyro meat (food-processor smooth) over romaine with tzatziki, feta, and a red wine vinaigrette.",
+      "baseServings": 4,
+      "activeMinutes": 35,
+      "totalMinutes": 70,
+      "tags": ["main", "salad", "lamb", "greek"],
+      "ingredients": [
+        { "id": "i1", "name": "ground lamb (or 50/50 lamb/beef)", "amount": 1, "unit": "lb", "section": "The Meat" },
+        { "id": "i2", "name": "ground beef (85/15)", "amount": 0.5, "unit": "lb", "section": "The Meat" },
+        { "id": "i3", "name": "small onion (grated and squeezed dry)", "amount": 1, "unit": "whole", "section": "The Meat" },
+        { "id": "i4", "name": "garlic cloves (minced to a paste)", "amount": 4, "unit": "whole", "section": "The Meat" },
+        { "id": "i5", "name": "dried oregano", "amount": 2, "unit": "tsp", "section": "The Meat" },
+        { "id": "i6", "name": "cumin", "amount": 1, "unit": "tsp", "section": "The Meat" },
+        { "id": "i7", "name": "smoked paprika", "amount": 1, "unit": "tsp", "section": "The Meat" },
+        { "id": "i8", "name": "coriander", "amount": 0.5, "unit": "tsp", "section": "The Meat" },
+        { "id": "i9", "name": "black pepper", "amount": 0.5, "unit": "tsp", "section": "The Meat" },
+        { "id": "i10", "name": "salt", "amount": 1, "unit": "tsp", "section": "The Meat" },
+        { "id": "i11", "name": "cinnamon", "amount": 0.25, "unit": "tsp", "section": "The Meat" },
+        { "id": "i12", "name": "cayenne", "amount": 1, "unit": "pinch", "section": "The Meat" },
+        { "id": "i13", "name": "Greek yogurt (full fat)", "amount": 1, "unit": "cup", "section": "Tzatziki" },
+        { "id": "i14", "name": "English cucumber (grated and squeezed very dry)", "amount": 0.5, "unit": "whole", "section": "Tzatziki" },
+        { "id": "i15", "name": "garlic cloves (microplaned)", "amount": 2, "unit": "whole", "section": "Tzatziki" },
+        { "id": "i16", "name": "olive oil", "amount": 1, "unit": "tbsp", "section": "Tzatziki" },
+        { "id": "i17", "name": "lemon juice", "amount": 1, "unit": "tbsp", "section": "Tzatziki" },
+        { "id": "i18", "name": "fresh dill (chopped)", "amount": 1, "unit": "tbsp", "section": "Tzatziki" },
+        { "id": "i19", "name": "salt to taste", "amount": 1, "unit": "pinch", "section": "Tzatziki" },
+        { "id": "i20", "name": "chopped romaine", "amount": 6, "unit": "cup", "section": "The Salad" },
+        { "id": "i21", "name": "cherry tomatoes (halved)", "amount": 1, "unit": "cup", "section": "The Salad" },
+        { "id": "i22", "name": "thin-sliced red onion", "amount": 0.25, "unit": "cup", "section": "The Salad" },
+        { "id": "i23", "name": "cucumber", "amount": 1, "unit": "cup", "section": "The Salad" },
+        { "id": "i24", "name": "kalamata olives", "amount": 0.33, "unit": "cup", "section": "The Salad" },
+        { "id": "i25", "name": "pepperoncini", "amount": 0.25, "unit": "cup", "section": "The Salad" },
+        { "id": "i26", "name": "crumbled feta", "amount": 0.5, "unit": "cup", "section": "The Salad" },
+        { "id": "i27", "name": "fresh parsley", "amount": 2, "unit": "tbsp", "section": "The Salad" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Process the meat", "content": "Blend all meat ingredients in a food processor until it becomes a smooth, sticky paste — this is what gives you the dense, sliceable texture." },
+        { "id": "s2", "title": "Air-fry", "content": "Spread thin (~¼ inch) on parchment in your air fryer. Cook at 375°F for 12–15 minutes, flipping halfway. Browned and slightly crispy at the edges.", "timerSeconds": 810 },
+        { "id": "s3", "title": "Rest and slice", "content": "Let rest a few minutes, then slice into strips." },
+        { "id": "s4", "title": "Tzatziki", "content": "Combine all tzatziki ingredients. Letting it sit for 30 minutes improves the flavor significantly.", "timerSeconds": 1800 },
+        { "id": "s5", "title": "Build the salad", "content": "Build on a bed of chopped romaine with tomatoes, red onion, cucumber, olives, pepperoncini, feta, and parsley." },
+        { "id": "s6", "title": "Dress and top", "content": "Drizzle with a simple red wine vinaigrette (3:1 olive oil to red wine vinegar, pinch of oregano, salt, pepper). Top with warm gyro meat strips and a generous dollop of tzatziki. Warm pita on the side if you want." }
+      ],
+      "notes": [
+        { "title": "Texture key", "body": "The food processor paste is what gives sliceable, dense gyro meat. Don't skip the processing step." }
+      ]
+    },
+    {
+      "id": "kens-meat-sauce-v1",
+      "title": "Ken's Meat Sauce",
+      "version": "v1",
+      "badge": "Sunday Sauce",
+      "icon": "🍅",
+      "accent": "#8C2E2E",
+      "description": "A slow-simmered Sunday sauce — thyme, marjoram, rosemary, capers with their brine, lemon, and red wine vinegar bring layered acid and lift.",
+      "baseServings": 6,
+      "activeMinutes": 30,
+      "totalMinutes": 240,
+      "tags": ["pasta", "beef", "make-ahead", "sunday"],
+      "ingredients": [
+        { "id": "i1", "name": "olive oil", "amount": 1, "unit": "tbsp", "section": "Aromatics" },
+        { "id": "i2", "name": "white onion (medium to fine dice)", "amount": 0.5, "unit": "whole", "section": "Aromatics" },
+        { "id": "i3", "name": "garlic cloves (minced)", "amount": 3, "unit": "whole", "section": "Aromatics" },
+        { "id": "i4", "name": "ground beef", "amount": 1, "unit": "lb", "section": "Meat" },
+        { "id": "i5", "name": "thyme (or 2 fresh sprigs)", "amount": 2, "unit": "tsp", "section": "Herbs" },
+        { "id": "i6", "name": "marjoram (or 2 fresh sprigs)", "amount": 2, "unit": "tsp", "section": "Herbs" },
+        { "id": "i7", "name": "rosemary (or 1 fresh sprig)", "amount": 1, "unit": "tsp", "section": "Herbs" },
+        { "id": "i8", "name": "bay leaves", "amount": 2, "unit": "whole", "section": "Herbs" },
+        { "id": "i9", "name": "tomato paste", "amount": 2, "unit": "tbsp", "section": "Tomato" },
+        { "id": "i10", "name": "can crushed tomatoes (28 oz)", "amount": 1, "unit": "whole", "section": "Tomato" },
+        { "id": "i11", "name": "red wine vinegar", "amount": 1.5, "unit": "tbsp", "section": "Acids & Brine" },
+        { "id": "i12", "name": "capers with their juice", "amount": 1.5, "unit": "oz", "section": "Acids & Brine" },
+        { "id": "i13", "name": "lemon juice", "amount": 2, "unit": "tsp", "section": "Acids & Brine" },
+        { "id": "i14", "name": "chicken stock (as needed)", "amount": 0.5, "unit": "cup", "section": "Liquid" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Sweat the onion", "content": "Heat olive oil in a Dutch oven or heavy-bottomed pot over medium / medium-low. Add onions with a pinch of salt and cook ~5 minutes until translucent." },
+        { "id": "s2", "title": "Garlic", "content": "Add garlic and cook for 1–2 minutes until fragrant." },
+        { "id": "s3", "title": "Brown the beef", "content": "Increase heat to medium. Add ground beef and cook, breaking it up, until no pink remains." },
+        { "id": "s4", "title": "Toast herbs", "content": "Create a well in the center of the meat. Add thyme, marjoram, and rosemary to the well and toast until fragrant, ~30 seconds, then stir into the meat." },
+        { "id": "s5", "title": "Tomato paste", "content": "Add tomato paste to the well and cook for 1 minute, stirring to incorporate." },
+        { "id": "s6", "title": "Crushed tomato + acids", "content": "Add crushed tomatoes and stir. Add red wine vinegar, capers with juice, lemon juice. Stir well." },
+        { "id": "s7", "title": "Simmer", "content": "Add bay leaves, bring to a low boil, then reduce heat and simmer uncovered for 3–4 hours, stirring occasionally. Add chicken stock as needed to maintain consistency." },
+        { "id": "s8", "title": "Finish", "content": "Remove bay leaves (and herb sprigs if using fresh) before serving. Adjust salt to taste." }
+      ],
+      "notes": [
+        { "title": "The simmer is non-negotiable", "body": "The long simmer is essential — it allows the acids to mellow, flavors to marry, and the sauce to develop body. Don't rush it." }
+      ]
+    },
+    {
+      "id": "rosemary-breakfast-potatoes-v1",
+      "title": "Rosemary Breakfast Potatoes",
+      "version": "v1",
+      "icon": "🌿",
+      "accent": "#5C7A2E",
+      "description": "Crispy, herb-loaded breakfast potatoes — boiled first for a fluffy interior, then roasted at high convection heat for maximum crunch.",
+      "baseServings": 4,
+      "activeMinutes": 10,
+      "totalMinutes": 55,
+      "tags": ["breakfast", "side", "potatoes"],
+      "ingredients": [
+        { "id": "i1", "name": "Yukon Gold potatoes", "amount": 3, "unit": "lb" },
+        { "id": "i2", "name": "olive oil (enough to coat)", "amount": 3, "unit": "tbsp" },
+        { "id": "i3", "name": "kosher salt", "amount": 2.5, "unit": "tsp" },
+        { "id": "i4", "name": "black pepper", "amount": 2.5, "unit": "tsp" },
+        { "id": "i5", "name": "dried rosemary", "amount": 2.5, "unit": "tsp" },
+        { "id": "i6", "name": "garlic powder", "amount": 1.5, "unit": "tsp" },
+        { "id": "i7", "name": "onion salt", "amount": 1.5, "unit": "tsp" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Cut", "content": "Halve each potato lengthwise, then halve each half lengthwise again (into quarters). Cut crosswise into ¼–⅓-inch thick slices." },
+        { "id": "s2", "title": "Boil", "content": "Place potatoes in a large pot, cover with cold water, salt generously. Bring to a boil and cook until soft and tender throughout but not falling apart, ~10–12 minutes.", "timerSeconds": 660 },
+        { "id": "s3", "title": "Drain and season", "content": "Drain well and return to the pot or a large bowl. Drizzle with olive oil and toss gently. Add salt, pepper, rosemary, garlic powder, and onion salt. Toss until evenly seasoned." },
+        { "id": "s4", "title": "Roast — first side", "content": "Spread in a single layer on a sheet pan. Roast at 460°F convection for 15 minutes until bottoms are golden and crispy.", "timerSeconds": 900 },
+        { "id": "s5", "title": "Flip and finish", "content": "Flip and roast 15 more minutes until deeply golden and crisp on both sides.", "timerSeconds": 900 }
+      ],
+      "notes": [
+        { "title": "Why boil-then-roast", "body": "Boiling gelatinizes the starch so you get a creamy interior; the high convection heat crisps the edges fast." },
+        { "title": "Slice thinness", "body": "Keep slices thin (¼–⅓ inch) so they get plenty of surface area for browning." },
+        { "title": "No convection?", "body": "Bump the temp to 475°F and you may need a couple extra minutes per side." }
+      ]
+    },
+    {
+      "id": "steak-bites-cottage-alfredo-v1",
+      "title": "Steak Bites with Cottage Cheese Alfredo",
+      "version": "v1",
+      "badge": "High Protein",
+      "icon": "🥩",
+      "accent": "#A04A2A",
+      "description": "Cast-iron seared steak cubes over fettuccine with a blender-only cottage-cheese alfredo. Higher protein, lower fat than a butter/cream/parm classic.",
+      "baseServings": 4,
+      "activeMinutes": 25,
+      "totalMinutes": 25,
+      "tags": ["beef", "pasta", "high-protein"],
+      "ingredients": [
+        { "id": "i1", "name": "Trader Joe's steak cubes (~1 package)", "amount": 1, "unit": "lb", "section": "Steak Bites" },
+        { "id": "i2", "name": "salt", "amount": 1, "unit": "tsp", "section": "Steak Bites" },
+        { "id": "i3", "name": "pepper", "amount": 1, "unit": "tsp", "section": "Steak Bites" },
+        { "id": "i4", "name": "garlic powder", "amount": 1, "unit": "tsp", "section": "Steak Bites" },
+        { "id": "i5", "name": "onion powder", "amount": 1, "unit": "tsp", "section": "Steak Bites" },
+        { "id": "i6", "name": "dried parsley", "amount": 1, "unit": "tsp", "section": "Steak Bites" },
+        { "id": "i7", "name": "cottage cheese", "amount": 1, "unit": "cup", "section": "Alfredo Sauce" },
+        { "id": "i8", "name": "light cream cheese (or ~6 wedges Laughing Cow Light)", "amount": 150, "unit": "g", "section": "Alfredo Sauce" },
+        { "id": "i9", "name": "garlic powder (preferred — or 2–3 fresh garlic cloves)", "amount": 0.5, "unit": "tsp", "section": "Alfredo Sauce" },
+        { "id": "i10", "name": "salt", "amount": 1, "unit": "tsp", "section": "Alfredo Sauce" },
+        { "id": "i11", "name": "pepper", "amount": 1, "unit": "tsp", "section": "Alfredo Sauce" },
+        { "id": "i12", "name": "dried parsley", "amount": 1, "unit": "tsp", "section": "Alfredo Sauce" },
+        { "id": "i13", "name": "cooked pasta (fettuccine or similar)", "amount": 10, "unit": "oz", "section": "To Serve" },
+        { "id": "i14", "name": "extra parsley for garnish", "amount": 1, "unit": "tbsp", "section": "To Serve" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Season the steak", "content": "Pat steak cubes dry. Toss with salt, pepper, garlic powder, onion powder, and parsley until evenly coated. Let sit at room temp while you prep the sauce." },
+        { "id": "s2", "title": "Blend the alfredo", "content": "Add cottage cheese, cream cheese, garlic powder, salt, pepper, and parsley to a high-speed blender. Blend on high for 3–5 minutes until completely smooth and warmed through — friction heats the sauce as it emulsifies.", "timerSeconds": 240 },
+        { "id": "s3", "title": "Heat the cast iron", "content": "Heat a cast iron skillet over high heat (or preheat grill to high) until smoking. No oil needed if cast iron is well-seasoned; otherwise a teaspoon of high-smoke-point oil." },
+        { "id": "s4", "title": "Sear", "content": "Sear steak cubes in a single layer, ~60–90 seconds per side for medium-rare. Work in batches if needed — do not crowd the pan or they'll steam. Transfer to a plate and let rest 2–3 minutes.", "timerSeconds": 90 },
+        { "id": "s5", "title": "Cook pasta", "content": "Start cooking the pasta to al dente while the steak rests. Reserve ½ cup pasta water before draining." },
+        { "id": "s6", "title": "Toss", "content": "Toss drained pasta with alfredo sauce, thinning with a splash of pasta water if needed for desired consistency." },
+        { "id": "s7", "title": "Plate", "content": "Plate pasta, top with steak bites, drizzle any resting juices over the top, finish with parsley. Serve immediately." }
+      ],
+      "notes": [
+        { "title": "Garlic powder > fresh", "body": "Blends smoother into a no-cook (blender-only) alfredo and avoids the raw bite that fresh garlic gives." },
+        { "title": "Cream cheese swap", "body": "Laughing Cow Light wedges work as the cream cheese swap; ~6 wedges ≈ 150g. Slightly tangier but the difference disappears once seasoned." },
+        { "title": "Blender warming", "body": "High-speed blender (Vitamix-class) for several minutes brings the sauce to serving temp without splitting. Lower-power blenders may need a quick warm in a saucepan after." },
+        { "title": "Steak temp", "body": "60–90 sec/side for medium-rare on ¾\" cubes. Add ~30 sec/side per doneness step." },
+        { "title": "Macro angle", "body": "Cottage cheese + light cream cheese yields a sauce that's dramatically higher protein and lower fat than a butter/cream/parm classic." }
+      ]
+    },
+    {
+      "id": "sweet-pickled-celery-v1",
+      "title": "Sweet Pickled Celery",
+      "version": "v1",
+      "badge": "Shelf-Stable",
+      "icon": "🥬",
+      "accent": "#6B8E23",
+      "description": "Inspired by Nomad East in Salt Lake City — bright, sweet, lemon-zest forward. Cured 2 weeks for full flavor.",
+      "baseServings": 24,
+      "servingsLabel": "¼-cup servings",
+      "activeMinutes": 30,
+      "totalMinutes": 1450,
+      "tags": ["pickle", "preserved", "make-ahead"],
+      "ingredients": [
+        { "id": "i1", "name": "unseasoned rice vinegar (or champagne vinegar)", "amount": 1.5, "unit": "cup", "section": "Brine" },
+        { "id": "i2", "name": "water", "amount": 1, "unit": "cup", "section": "Brine" },
+        { "id": "i3", "name": "granulated sugar", "amount": 1, "unit": "cup", "section": "Brine" },
+        { "id": "i4", "name": "kosher salt", "amount": 1, "unit": "tbsp", "section": "Brine" },
+        { "id": "i5", "name": "whole black peppercorns", "amount": 0.5, "unit": "tsp", "section": "Brine" },
+        { "id": "i6", "name": "celery seed", "amount": 0.5, "unit": "tsp", "section": "Brine" },
+        { "id": "i7", "name": "lemon zest strip per jar (about 2\", no pith)", "amount": 1, "unit": "whole", "section": "Brine" },
+        { "id": "i8", "name": "large bunch celery (sliced on a bias ¼\" thick, 6–7 cups)", "amount": 1, "unit": "whole", "section": "Produce" }
+      ],
+      "steps": [
+        { "id": "s1", "title": "Make brine", "content": "Combine vinegar, water, sugar, salt, peppercorns, and celery seed in a saucepan. Bring to a boil, stirring until sugar and salt dissolve." },
+        { "id": "s2", "title": "Zest the jars", "content": "Place one strip of lemon zest in each sterilized pint jar." },
+        { "id": "s3", "title": "Pack", "content": "Pack raw celery tightly into jars, leaving ½\" headspace." },
+        { "id": "s4", "title": "Brine and de-bubble", "content": "Ladle hot brine over celery, maintaining ½\" headspace. Remove air bubbles with a chopstick or bubble tool." },
+        { "id": "s5", "title": "Seal", "content": "Wipe rims clean, apply lids and bands finger-tight." },
+        { "id": "s6", "title": "Process", "content": "Process in a boiling water bath for 10 minutes. (Adjust for altitude: add 5 minutes above 6,000 feet.)", "timerSeconds": 600 },
+        { "id": "s7", "title": "Cure", "content": "Let jars rest 24 hours. Check seals. Cure at least 2 weeks before opening for best flavor.", "timerSeconds": 86400 }
+      ],
+      "notes": [
+        { "title": "More sweetness", "body": "Increase sugar to 1¼ cups." },
+        { "title": "Brighter citrus", "body": "Add a second zest strip or try Meyer lemon." },
+        { "title": "Warmer profile", "body": "Add a coin of fresh ginger or a cracked cardamom pod." },
+        { "title": "Deeper complexity", "body": "Substitute ½ cup apple cider vinegar for part of the rice vinegar." }
+      ]
+    }
+  ]
+}
