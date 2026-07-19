@@ -21,7 +21,7 @@
  * header, etc.), hand-edit the resulting JSON.
  */
 
-import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
 import { join, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -30,6 +30,8 @@ const ROOT = join(__dirname, '..');
 const SOURCE_DIR = join(ROOT, 'recipes-source');
 const OUT_FILE = join(ROOT, 'src/data/recipes.json');
 const META_FILE = join(SOURCE_DIR, '_metadata.json');
+const PHOTOS_DIR = join(ROOT, 'public/photos');
+const PHOTO_EXTS = ['.jpg', '.jpeg', '.png', '.webp'];
 
 const VOLUME_UNITS = ['cup', 'cups', 'tbsp', 'tablespoon', 'tablespoons', 'tsp', 'teaspoon', 'teaspoons', 'ml', 'l', 'liter', 'liters', 'pint', 'quart', 'fl oz'];
 const WEIGHT_UNITS = ['g', 'gram', 'grams', 'kg', 'oz', 'ounce', 'ounces', 'lb', 'lbs', 'pound', 'pounds'];
@@ -114,12 +116,22 @@ function slugify(s) {
   return s.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
 }
 
-function parseMarkdownRecipe(md, meta) {
+function parseMarkdownRecipe(md, meta, photoPath) {
   const lines = md.split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
+
+  // Pull an "Author: ..." line out of the first 5 non-empty lines if present
+  let detectedAuthor = null;
+  for (let i = 0; i < Math.min(lines.length, 5); i++) {
+    const m = lines[i].match(/^author\s*[:—–-]\s*(.+)$/i);
+    if (m) { detectedAuthor = m[1].trim(); lines.splice(i, 1); break; }
+  }
+
   const result = {
     id: meta.id,
+    family: meta.family || meta.id.replace(/-v\d+.*$/, ''),
     title: meta.title || lines[0],
     version: meta.version || 'v1',
+    author: meta.author || detectedAuthor || 'Kenneth',
     icon: meta.icon || '🍽️',
     accent: meta.accent || '#7B4423',
     description: meta.description || '',
@@ -129,6 +141,7 @@ function parseMarkdownRecipe(md, meta) {
     activeMinutes: meta.activeMinutes || 0,
     totalMinutes: meta.totalMinutes || 0,
     tags: meta.tags || [],
+    photo: photoPath || meta.photo,
     ingredients: [],
     steps: [],
     notes: meta.notes || [],
@@ -213,15 +226,31 @@ function main() {
     process.exit(1);
   }
 
+  // Ensure photos directory exists
+  if (!existsSync(PHOTOS_DIR)) mkdirSync(PHOTOS_DIR, { recursive: true });
+
   const recipes = [];
   for (const f of files.sort()) {
     const id = basename(f, '.md');
     const recipeMeta = { id, ...(meta[id] || {}) };
     const md = readFileSync(join(SOURCE_DIR, f), 'utf8');
+
+    // Look for a sibling photo file
+    let photoPath = null;
+    for (const ext of PHOTO_EXTS) {
+      const candidate = join(SOURCE_DIR, id + ext);
+      if (existsSync(candidate)) {
+        const dest = join(PHOTOS_DIR, id + ext);
+        copyFileSync(candidate, dest);
+        photoPath = `/photos/${id}${ext}`;
+        break;
+      }
+    }
+
     try {
-      const recipe = parseMarkdownRecipe(md, recipeMeta);
+      const recipe = parseMarkdownRecipe(md, recipeMeta, photoPath);
       recipes.push(recipe);
-      console.log(`✓ ${id} — ${recipe.ingredients.length} ingredients, ${recipe.steps.length} steps`);
+      console.log(`✓ ${id} — ${recipe.ingredients.length} ingredients, ${recipe.steps.length} steps${photoPath ? ' · 📷' : ''}`);
     } catch (e) {
       console.error(`✗ ${id}: ${e.message}`);
     }

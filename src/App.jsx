@@ -1,17 +1,19 @@
-import { useState, useEffect, useMemo } from 'react';
-import { Search, Plus, ArrowLeft, Minus, Edit3, Clock, Users, ChevronRight, Trash2, X, Save, AlertCircle, RefreshCcw, RotateCcw } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { Search, ArrowLeft, Minus, Plus, Clock, Users, ChevronRight } from 'lucide-react';
 import recipesData from './data/recipes.json';
+
+// Photo paths in recipes.json are root-absolute ("/photos/x.jpg"); BASE_URL keeps them
+// working when the site is served from a subpath (GitHub Pages) as well as root (Netlify).
+const assetUrl = (p) => (p ? import.meta.env.BASE_URL + p.replace(/^\//, '') : p);
 
 /* ============================================================
    UNIT CONVERSION
    ============================================================ */
 
-// Volume unit → milliliters
 const VOLUME_TO_ML = {
   cup: 240, tbsp: 15, tsp: 5, ml: 1, l: 1000, fl_oz: 30, pint: 480, quart: 960,
 };
 
-// Weight unit → grams
 const WEIGHT_TO_G = {
   g: 1, kg: 1000, oz: 28.3495, lb: 453.592,
 };
@@ -19,7 +21,6 @@ const WEIGHT_TO_G = {
 const VOLUME_UNITS = new Set(Object.keys(VOLUME_TO_ML));
 const WEIGHT_UNITS = new Set(Object.keys(WEIGHT_TO_G));
 
-// Grams per cup (240 ml) — for volume↔weight conversion
 const DENSITY_G_PER_CUP = {
   'heavy cream': 240, 'cream': 240, 'whipping cream': 238, 'half and half': 242,
   'milk': 244, 'whole milk': 244, 'skim milk': 245, 'fairlife': 244,
@@ -157,115 +158,35 @@ function formatTime(seconds) {
 }
 
 /* ============================================================
-   STORAGE
-   ----------
-   Source of truth: src/data/recipes.json (refreshed from Box).
-   localStorage tracks per-user customizations only:
-     - overrides: { [recipeId]: recipeObject }   (edited canonical recipes)
-     - additions: recipeObject[]                 (recipes the user added)
-     - deletions: recipeId[]                     (canonical recipes the user hid)
+   VERSION FAMILY HELPERS
    ============================================================ */
 
-const KEYS = {
-  overrides: 'recipes:overrides-v1',
-  additions: 'recipes:additions-v1',
-  deletions: 'recipes:deletions-v1',
-};
-
-function loadStored() {
-  const safe = (key, fallback) => {
-    try {
-      const raw = localStorage.getItem(key);
-      if (!raw) return fallback;
-      const parsed = JSON.parse(raw);
-      return parsed ?? fallback;
-    } catch { return fallback; }
-  };
-  return {
-    overrides: safe(KEYS.overrides, {}),
-    additions: safe(KEYS.additions, []),
-    deletions: safe(KEYS.deletions, []),
-  };
+function familyOf(recipe) {
+  return recipe.family || recipe.id.replace(/-v\d+.*$/, '');
 }
 
-function saveStored(stored) {
-  try {
-    localStorage.setItem(KEYS.overrides, JSON.stringify(stored.overrides));
-    localStorage.setItem(KEYS.additions, JSON.stringify(stored.additions));
-    localStorage.setItem(KEYS.deletions, JSON.stringify(stored.deletions));
-    return true;
-  } catch { return false; }
+function versionRank(recipe) {
+  const v = recipe.version || '';
+  const m = v.match(/v?(\d+)/i);
+  if (m) return parseInt(m[1]);
+  return 0;
 }
 
-function effectiveRecipes(canonical, stored) {
-  const surviving = canonical
-    .filter(r => !stored.deletions.includes(r.id))
-    .map(r => stored.overrides[r.id] ? { ...stored.overrides[r.id], _edited: true } : r);
-  const additions = stored.additions.map(r => ({ ...r, _userAdded: true }));
-  return [...surviving, ...additions];
+function siblingsByFamily(allRecipes, family) {
+  const sibs = allRecipes.filter(r => familyOf(r) === family);
+  return sibs.slice().sort((a, b) => versionRank(a) - versionRank(b));
 }
 
 /* ============================================================
-   APP
+   APP — READ-ONLY DISPLAY
    ============================================================ */
 
 export default function RecipeApp() {
-  const canonical = recipesData.recipes;
+  const recipes = recipesData.recipes;
   const dataVersion = recipesData.dataVersion;
 
-  const [stored, setStored] = useState(() => loadStored());
   const [view, setView] = useState({ type: 'list' });
   const [search, setSearch] = useState('');
-  const [saveStatus, setSaveStatus] = useState(null);
-
-  const recipes = useMemo(() => effectiveRecipes(canonical, stored), [canonical, stored]);
-
-  const persist = (next) => {
-    setStored(next);
-    setSaveStatus('saving');
-    const ok = saveStored(next);
-    setSaveStatus(ok ? 'saved' : 'error');
-    setTimeout(() => setSaveStatus(null), 1800);
-  };
-
-  const handleSave = (recipe) => {
-    const isCanonical = canonical.some(r => r.id === recipe.id);
-    const isAddition = stored.additions.some(r => r.id === recipe.id);
-    const next = { ...stored };
-    if (isCanonical) {
-      next.overrides = { ...stored.overrides, [recipe.id]: recipe };
-    } else if (isAddition) {
-      next.additions = stored.additions.map(r => r.id === recipe.id ? recipe : r);
-    } else {
-      next.additions = [...stored.additions, recipe];
-    }
-    persist(next);
-    setView({ type: 'detail', id: recipe.id });
-  };
-
-  const handleDelete = (id) => {
-    const next = { ...stored };
-    if (canonical.some(r => r.id === id)) {
-      next.deletions = [...stored.deletions, id];
-      // Drop any override for that id since it's now hidden
-      const { [id]: _, ...rest } = stored.overrides;
-      next.overrides = rest;
-    } else {
-      next.additions = stored.additions.filter(r => r.id !== id);
-    }
-    persist(next);
-    setView({ type: 'list' });
-  };
-
-  const handleResetRecipe = (id) => {
-    if (!stored.overrides[id]) return;
-    const { [id]: _, ...rest } = stored.overrides;
-    persist({ ...stored, overrides: rest });
-  };
-
-  const handleResetAll = () => {
-    persist({ overrides: {}, additions: [], deletions: [] });
-  };
 
   return (
     <>
@@ -309,25 +230,14 @@ export default function RecipeApp() {
             search={search}
             setSearch={setSearch}
             onSelect={(id) => setView({ type: 'detail', id })}
-            onAdd={() => setView({ type: 'edit', id: null })}
-            saveStatus={saveStatus}
             dataVersion={dataVersion}
-            onResetAll={handleResetAll}
-            hasLocalChanges={Object.keys(stored.overrides).length > 0 || stored.additions.length > 0 || stored.deletions.length > 0}
           />
         ) : view.type === 'detail' ? (
           <DetailView
             recipe={recipes.find(r => r.id === view.id)}
+            allRecipes={recipes}
             onBack={() => setView({ type: 'list' })}
-            onEdit={() => setView({ type: 'edit', id: view.id })}
-            onDelete={handleDelete}
-            onResetOverride={() => handleResetRecipe(view.id)}
-          />
-        ) : view.type === 'edit' ? (
-          <EditView
-            recipe={view.id ? recipes.find(r => r.id === view.id) : null}
-            onSave={handleSave}
-            onCancel={() => setView(view.id ? { type: 'detail', id: view.id } : { type: 'list' })}
+            onSelect={(id) => setView({ type: 'detail', id })}
           />
         ) : null}
       </div>
@@ -339,8 +249,7 @@ export default function RecipeApp() {
    LIST VIEW
    ============================================================ */
 
-function ListView({ recipes, search, setSearch, onSelect, onAdd, saveStatus, dataVersion, onResetAll, hasLocalChanges }) {
-  const [showResetConfirm, setShowResetConfirm] = useState(false);
+function ListView({ recipes, search, setSearch, onSelect, dataVersion }) {
   const filtered = useMemo(() => {
     if (!search.trim()) return recipes;
     const q = search.toLowerCase();
@@ -348,23 +257,47 @@ function ListView({ recipes, search, setSearch, onSelect, onAdd, saveStatus, dat
       r.title.toLowerCase().includes(q) ||
       r.description?.toLowerCase().includes(q) ||
       r.tags?.some(t => t.toLowerCase().includes(q)) ||
-      r.ingredients?.some(i => i.name.toLowerCase().includes(q))
+      r.ingredients?.some(i => i.name.toLowerCase().includes(q)) ||
+      r.author?.toLowerCase().includes(q)
     );
   }, [recipes, search]);
 
+  // Group by family — ONE card per family, always the latest version.
+  // Older versions live behind the version-switcher on the detail page.
+  // Search rule: a family matches if ANY of its versions match the query.
+  const grouped = useMemo(() => {
+    const matchingFamilies = new Set();
+    for (const r of filtered) matchingFamilies.add(familyOf(r));
+
+    // Track family first-appearance index in the full recipes list (for ordering)
+    const familyFirstIndex = new Map();
+    recipes.forEach((r, i) => {
+      const fam = familyOf(r);
+      if (!familyFirstIndex.has(fam)) familyFirstIndex.set(fam, i);
+    });
+
+    const out = [];
+    for (const fam of matchingFamilies) {
+      const allInFamily = recipes.filter(r => familyOf(r) === fam);
+      // Highest version rank wins; ties broken by file order (first wins)
+      const sorted = allInFamily.slice().sort((a, b) => {
+        const rankDiff = versionRank(b) - versionRank(a);
+        if (rankDiff !== 0) return rankDiff;
+        return recipes.indexOf(a) - recipes.indexOf(b);
+      });
+      out.push({ recipe: sorted[0], siblingCount: allInFamily.length });
+    }
+    out.sort((a, b) => familyFirstIndex.get(familyOf(a.recipe)) - familyFirstIndex.get(familyOf(b.recipe)));
+    return out;
+  }, [filtered, recipes]);
+
   return (
     <div className="max-w-5xl mx-auto px-5 py-8 sm:px-8 sm:py-12">
-      {/* Masthead */}
       <header className="mb-10 sm:mb-14">
         <div className="flex items-baseline justify-between mb-1">
           <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-stone-500">
-            № {String(recipes.length).padStart(3, '0')} · refreshed {dataVersion}
+            № {String(grouped.length).padStart(3, '0')} dishes · refreshed {dataVersion}
           </div>
-          {saveStatus && (
-            <div className="font-mono text-[10px] tracking-widest uppercase text-stone-500 fade-in">
-              {saveStatus === 'saving' ? 'saving…' : saveStatus === 'saved' ? '✓ saved' : '⚠ save failed'}
-            </div>
-          )}
         </div>
         <h1 className="font-display text-6xl sm:text-7xl font-light tracking-tight leading-none text-stone-900">
           The Kitchen
@@ -376,86 +309,43 @@ function ListView({ recipes, search, setSearch, onSelect, onAdd, saveStatus, dat
         </div>
       </header>
 
-      {/* Controls */}
-      <div className="mb-8 flex flex-col sm:flex-row gap-3">
-        <div className="relative flex-1">
+      <div className="mb-8">
+        <div className="relative">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search recipes, tags, ingredients…"
+            placeholder="Search recipes, tags, ingredients, authors…"
             className="w-full pl-11 pr-4 py-3 bg-stone-50/60 border border-stone-300 rounded-none font-body text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors"
           />
         </div>
-        <button
-          onClick={onAdd}
-          className="px-5 py-3 bg-stone-900 text-stone-50 font-body font-medium text-sm tracking-wide hover:bg-stone-800 transition-colors flex items-center justify-center gap-2"
-        >
-          <Plus className="w-4 h-4" />
-          New Recipe
-        </button>
       </div>
 
-      {/* Local-changes indicator */}
-      {hasLocalChanges && (
-        <div className="mb-6 px-4 py-3 border border-stone-300 bg-stone-50/50 flex items-center justify-between fade-in">
-          <div className="font-mono text-[10px] tracking-widest uppercase text-stone-600">
-            you have local edits — they live in this browser only
-          </div>
-          <button
-            onClick={() => setShowResetConfirm(true)}
-            className="font-mono text-[10px] tracking-widest uppercase text-stone-700 hover:text-stone-900 flex items-center gap-1.5"
-          >
-            <RotateCcw className="w-3 h-3" /> reset to canonical
-          </button>
-        </div>
-      )}
-
-      {/* Grid */}
-      {filtered.length === 0 ? (
+      {grouped.length === 0 ? (
         <div className="text-center py-20">
           <div className="font-display italic text-stone-500 text-xl">nothing matches that.</div>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((r, i) => (
-            <RecipeCard key={r.id} recipe={r} onClick={() => onSelect(r.id)} delay={i * 30} />
+          {grouped.map(({ recipe, siblingCount }, i) => (
+            <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              onClick={() => onSelect(recipe.id)}
+              delay={i * 30}
+              siblingCount={siblingCount}
+            />
           ))}
-        </div>
-      )}
-
-      {/* Reset confirm */}
-      {showResetConfirm && (
-        <div className="fixed inset-0 bg-stone-900/60 flex items-center justify-center z-50 p-5 fade-in">
-          <div className="bg-stone-50 border border-stone-900 max-w-sm w-full p-6">
-            <div className="flex gap-3 mb-4">
-              <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-display text-xl font-medium mb-1">Reset to canonical?</h3>
-                <p className="text-sm text-stone-600">All local edits, additions, and deletions will be discarded. The recipe set returns to whatever was last synced from Box.</p>
-              </div>
-            </div>
-            <div className="flex gap-2 justify-end">
-              <button onClick={() => setShowResetConfirm(false)} className="px-4 py-2 text-sm hover:bg-stone-100">
-                Cancel
-              </button>
-              <button
-                onClick={() => { onResetAll(); setShowResetConfirm(false); }}
-                className="px-4 py-2 text-sm bg-stone-900 text-stone-50 hover:bg-stone-800"
-              >
-                Reset all
-              </button>
-            </div>
-          </div>
         </div>
       )}
     </div>
   );
 }
 
-function RecipeCard({ recipe, onClick, delay = 0 }) {
+function RecipeCard({ recipe, onClick, delay = 0, siblingCount = 1 }) {
   const accent = recipe.accent || '#7B4423';
+  const hasSiblings = siblingCount > 1;
   return (
     <button
       onClick={onClick}
@@ -463,30 +353,48 @@ function RecipeCard({ recipe, onClick, delay = 0 }) {
       style={{ animationDelay: `${delay}ms` }}
     >
       <div
-        className="aspect-[4/3] flex items-center justify-center text-7xl sm:text-8xl border-b border-stone-300 transition-transform group-hover:scale-[1.02]"
-        style={{ background: `linear-gradient(135deg, ${accent}15 0%, ${accent}05 100%)` }}
+        className="aspect-[4/3] flex items-center justify-center text-7xl sm:text-8xl border-b border-stone-300 transition-transform group-hover:scale-[1.02] overflow-hidden relative"
+        style={{ background: recipe.photo ? '#F5EFE3' : `linear-gradient(135deg, ${accent}15 0%, ${accent}05 100%)` }}
       >
-        <span style={{ filter: 'saturate(0.85)' }}>{recipe.icon || '🍽️'}</span>
+        {recipe.photo && (
+          <img
+            src={assetUrl(recipe.photo)}
+            alt={recipe.title}
+            className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        )}
+        <span style={{ filter: 'saturate(0.85)' }} className="relative">
+          {!recipe.photo && (recipe.icon || '🍽️')}
+        </span>
       </div>
       <div className="p-5 flex-1 flex flex-col">
         <div className="flex items-baseline justify-between gap-3 mb-2">
           <h3 className="font-display text-2xl font-medium leading-tight text-stone-900">
             {recipe.title}
           </h3>
-          <span className="font-mono text-[10px] tracking-widest uppercase shrink-0 mt-1" style={{ color: accent }}>
+          <span className="font-mono text-[10px] tracking-widest uppercase shrink-0 mt-1 flex items-center gap-1.5" style={{ color: accent }}>
             {recipe.version}
+            {hasSiblings && (
+              <span className="text-stone-400 normal-case tracking-normal">
+                +{siblingCount - 1}
+              </span>
+            )}
           </span>
         </div>
-        {(recipe.badge || recipe._edited || recipe._userAdded) && (
-          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-3 flex items-center gap-2">
-            {recipe.badge && <span>{recipe.badge}</span>}
-            {recipe._edited && <span className="text-amber-700">· edited</span>}
-            {recipe._userAdded && <span className="text-emerald-700">· added by you</span>}
+        {recipe.badge && (
+          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-3">
+            {recipe.badge}
           </div>
         )}
-        <p className="text-sm text-stone-600 leading-relaxed mb-4 line-clamp-3">
+        <p className="text-sm text-stone-600 leading-relaxed mb-3 line-clamp-3">
           {recipe.description}
         </p>
+        {recipe.author && (
+          <div className="font-mono text-[9px] tracking-[0.2em] uppercase text-stone-400 mb-3">
+            by {recipe.author}
+          </div>
+        )}
         <div className="mt-auto flex items-center justify-between text-xs text-stone-500 font-mono pt-3 border-t border-stone-200">
           <span className="flex items-center gap-1.5"><Users className="w-3 h-3" />{recipe.baseServings}</span>
           {recipe.totalMinutes ? (
@@ -503,10 +411,9 @@ function RecipeCard({ recipe, onClick, delay = 0 }) {
    DETAIL VIEW
    ============================================================ */
 
-function DetailView({ recipe, onBack, onEdit, onDelete, onResetOverride }) {
+function DetailView({ recipe, allRecipes, onBack, onSelect }) {
   const [servings, setServings] = useState(recipe?.baseServings || 1);
   const [unitSystem, setUnitSystem] = useState('original');
-  const [confirmDelete, setConfirmDelete] = useState(false);
 
   if (!recipe) {
     return (
@@ -519,7 +426,10 @@ function DetailView({ recipe, onBack, onEdit, onDelete, onResetOverride }) {
   const scale = servings / recipe.baseServings;
   const accent = recipe.accent || '#7B4423';
 
-  // Group ingredients by section, preserving order
+  const family = familyOf(recipe);
+  const siblings = siblingsByFamily(allRecipes, family);
+  const hasSiblings = siblings.length > 1;
+
   const sectionedIngredients = useMemo(() => {
     const groups = [];
     let current = null;
@@ -541,26 +451,23 @@ function DetailView({ recipe, onBack, onEdit, onDelete, onResetOverride }) {
           <ArrowLeft className="w-4 h-4" />
           <span className="font-mono text-[11px] tracking-[0.2em] uppercase">The Kitchen</span>
         </button>
-        <div className="flex items-center gap-2">
-          {recipe._edited && (
-            <button onClick={onResetOverride} className="p-2 text-amber-700 hover:text-amber-900 transition-colors" aria-label="Reset to canonical" title="Reset to canonical">
-              <RotateCcw className="w-4 h-4" />
-            </button>
-          )}
-          <button onClick={onEdit} className="p-2 text-stone-600 hover:text-stone-900 transition-colors" aria-label="Edit">
-            <Edit3 className="w-4 h-4" />
-          </button>
-          <button onClick={() => setConfirmDelete(true)} className="p-2 text-stone-600 hover:text-red-700 transition-colors" aria-label="Delete">
-            <Trash2 className="w-4 h-4" />
-          </button>
-        </div>
       </div>
 
       <div
-        className="aspect-[16/9] sm:aspect-[21/9] flex items-center justify-center text-8xl sm:text-9xl border border-stone-300 mb-8"
-        style={{ background: `linear-gradient(135deg, ${accent}20 0%, ${accent}08 100%)` }}
+        className="aspect-[16/9] sm:aspect-[21/9] flex items-center justify-center text-8xl sm:text-9xl border border-stone-300 mb-8 overflow-hidden relative"
+        style={{ background: recipe.photo ? '#F5EFE3' : `linear-gradient(135deg, ${accent}20 0%, ${accent}08 100%)` }}
       >
-        <span style={{ filter: 'saturate(0.85)' }}>{recipe.icon || '🍽️'}</span>
+        {recipe.photo && (
+          <img
+            src={assetUrl(recipe.photo)}
+            alt={recipe.title}
+            className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        )}
+        <span style={{ filter: 'saturate(0.85)' }} className="relative">
+          {!recipe.photo && (recipe.icon || '🍽️')}
+        </span>
       </div>
 
       <div className="mb-8">
@@ -569,16 +476,46 @@ function DetailView({ recipe, onBack, onEdit, onDelete, onResetOverride }) {
             {recipe.badge || recipe.tags?.[0] || ''}
           </span>
           <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-stone-500">
-            {recipe.version}{recipe._edited ? ' · edited locally' : ''}
+            {recipe.version}
           </span>
         </div>
-        <h1 className="font-display text-5xl sm:text-6xl font-light leading-[0.95] tracking-tight mb-4 text-stone-900">
+        <h1 className="font-display text-5xl sm:text-6xl font-light leading-[0.95] tracking-tight mb-3 text-stone-900">
           {recipe.title}
         </h1>
+        {recipe.author && (
+          <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-stone-500 mb-4">
+            by {recipe.author}
+          </div>
+        )}
         <p className="font-display italic text-lg sm:text-xl text-stone-700 leading-relaxed max-w-2xl">
           {recipe.description}
         </p>
       </div>
+
+      {hasSiblings && (
+        <div className="mb-8 px-4 py-3 border border-stone-300 bg-stone-50/40">
+          <div className="font-mono text-[9px] tracking-[0.25em] uppercase text-stone-500 mb-2">
+            Other versions
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {siblings.map(sib => (
+              <button
+                key={sib.id}
+                onClick={() => sib.id !== recipe.id && onSelect(sib.id)}
+                disabled={sib.id === recipe.id}
+                className={`px-3 py-1.5 font-mono text-[10px] tracking-widest uppercase border transition-colors ${
+                  sib.id === recipe.id
+                    ? 'bg-stone-900 text-stone-50 border-stone-900 cursor-default'
+                    : 'bg-stone-50 border-stone-300 hover:border-stone-900'
+                }`}
+              >
+                {sib.version}
+                {sib.badge && <span className="ml-2 text-stone-400">· {sib.badge}</span>}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-3 gap-1 sm:gap-3 mb-10 border-y border-stone-300 py-5">
         <MetaCell label="Yield" value={`${servings}`} sub={recipe.servingsLabel || 'servings'} accent={accent} />
@@ -677,28 +614,6 @@ function DetailView({ recipe, onBack, onEdit, onDelete, onResetOverride }) {
       <div className="text-center py-8 border-t border-stone-300">
         <div className="font-display italic text-stone-500 text-sm">— end of recipe —</div>
       </div>
-
-      {confirmDelete && (
-        <div className="fixed inset-0 bg-stone-900/60 flex items-center justify-center z-50 p-5 fade-in">
-          <div className="bg-stone-50 border border-stone-900 max-w-sm w-full p-6">
-            <div className="flex gap-3 mb-4">
-              <AlertCircle className="w-5 h-5 text-red-700 shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-display text-xl font-medium mb-1">Hide this recipe?</h3>
-                <p className="text-sm text-stone-600">"{recipe.title}" will be hidden in this browser. If it's a canonical recipe, the next sync from Box will not bring it back unless you reset.</p>
-              </div>
-            </div>
-            <div className="flex gap-2 justify-end">
-              <button onClick={() => setConfirmDelete(false)} className="px-4 py-2 text-sm hover:bg-stone-100">
-                Cancel
-              </button>
-              <button onClick={() => onDelete(recipe.id)} className="px-4 py-2 text-sm bg-red-700 text-white hover:bg-red-800">
-                Hide
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -814,217 +729,5 @@ function StepRow({ step, index, accent }) {
         <p className="text-stone-700 leading-relaxed text-[15px]">{step.content}</p>
       </div>
     </li>
-  );
-}
-
-/* ============================================================
-   EDIT VIEW
-   ============================================================ */
-
-function EditView({ recipe, onSave, onCancel }) {
-  const isNew = !recipe;
-  const [draft, setDraft] = useState(() => recipe ? JSON.parse(JSON.stringify(recipe)) : {
-    id: `r-${Date.now()}`,
-    title: '',
-    version: 'v1',
-    icon: '🍽️',
-    accent: '#7B4423',
-    description: '',
-    baseServings: 4,
-    activeMinutes: 0,
-    totalMinutes: 0,
-    tags: [],
-    ingredients: [{ id: `i${Date.now()}`, name: '', amount: 1, unit: 'cup' }],
-    steps: [{ id: `s${Date.now()}`, title: '', content: '' }],
-    notes: [],
-  });
-
-  // Drop synthetic flags from saved draft
-  const cleanDraft = (d) => {
-    const { _edited, _userAdded, ...rest } = d;
-    return rest;
-  };
-
-  const update = (patch) => setDraft({ ...draft, ...patch });
-  const updateIngredient = (i, patch) => {
-    const ings = [...draft.ingredients];
-    ings[i] = { ...ings[i], ...patch };
-    update({ ingredients: ings });
-  };
-  const addIngredient = () => update({ ingredients: [...draft.ingredients, { id: `i${Date.now()}`, name: '', amount: 1, unit: 'cup' }] });
-  const removeIngredient = (i) => update({ ingredients: draft.ingredients.filter((_, idx) => idx !== i) });
-  const updateStep = (i, patch) => {
-    const steps = [...draft.steps];
-    steps[i] = { ...steps[i], ...patch };
-    update({ steps });
-  };
-  const addStep = () => update({ steps: [...draft.steps, { id: `s${Date.now()}`, title: '', content: '' }] });
-  const removeStep = (i) => update({ steps: draft.steps.filter((_, idx) => idx !== i) });
-
-  const canSave = draft.title.trim() && draft.ingredients.some(i => i.name.trim()) && draft.steps.some(s => s.title.trim() || s.content.trim());
-
-  return (
-    <div className="max-w-3xl mx-auto px-5 py-6 sm:px-8 sm:py-10 slide-up">
-      <div className="flex items-center justify-between mb-8 pb-4 border-b border-stone-300">
-        <button onClick={onCancel} className="flex items-center gap-2 text-stone-600 hover:text-stone-900 transition-colors text-sm">
-          <X className="w-4 h-4" />
-          <span className="font-mono text-[11px] tracking-[0.2em] uppercase">Cancel</span>
-        </button>
-        <h2 className="font-mono text-[10px] tracking-[0.25em] uppercase text-stone-500">
-          {isNew ? 'New Recipe' : 'Editing'}
-        </h2>
-        <button
-          onClick={() => canSave && onSave(cleanDraft(draft))}
-          disabled={!canSave}
-          className="flex items-center gap-2 px-4 py-2 bg-stone-900 text-stone-50 disabled:bg-stone-300 transition-colors text-sm font-medium"
-        >
-          <Save className="w-4 h-4" />
-          Save
-        </button>
-      </div>
-
-      <div className="mb-6 px-3 py-2 border-l-2 border-amber-600 bg-amber-50/50 text-xs text-stone-700">
-        Edits and new recipes are saved <strong>only in this browser</strong>. To make changes permanent, edit the .docx in your Box <em>Recipes</em> folder and ask Claude to refresh the site.
-      </div>
-
-      <div className="space-y-3 mb-8">
-        <Field label="Title">
-          <input
-            value={draft.title}
-            onChange={(e) => update({ title: e.target.value })}
-            placeholder="What are you making?"
-            className="w-full bg-transparent border-b border-stone-300 focus:border-stone-900 outline-none font-display text-3xl font-light py-2"
-          />
-        </Field>
-        <div className="grid grid-cols-3 gap-3">
-          <Field label="Version"><TextInput value={draft.version} onChange={v => update({ version: v })} /></Field>
-          <Field label="Icon"><TextInput value={draft.icon} onChange={v => update({ icon: v })} /></Field>
-          <Field label="Servings"><TextInput type="number" value={draft.baseServings} onChange={v => update({ baseServings: parseFloat(v) || 1 })} /></Field>
-        </div>
-        <Field label="Description">
-          <textarea
-            value={draft.description}
-            onChange={(e) => update({ description: e.target.value })}
-            rows={2}
-            placeholder="One sentence about this recipe."
-            className="w-full bg-transparent border border-stone-300 focus:border-stone-900 outline-none font-display italic text-base py-2 px-3 resize-none"
-          />
-        </Field>
-        <div className="grid grid-cols-2 gap-3">
-          <Field label="Active min"><TextInput type="number" value={draft.activeMinutes} onChange={v => update({ activeMinutes: parseInt(v) || 0 })} /></Field>
-          <Field label="Total min"><TextInput type="number" value={draft.totalMinutes} onChange={v => update({ totalMinutes: parseInt(v) || 0 })} /></Field>
-        </div>
-      </div>
-
-      <div className="mb-8">
-        <h3 className="font-display text-2xl font-medium mb-3">Ingredients</h3>
-        <div className="space-y-2">
-          {draft.ingredients.map((ing, i) => (
-            <div key={ing.id} className="grid grid-cols-[60px_70px_1fr_30px] gap-2 items-center">
-              <input
-                type="number"
-                value={ing.amount}
-                onChange={(e) => updateIngredient(i, { amount: parseFloat(e.target.value) || 0 })}
-                className="bg-transparent border-b border-stone-300 focus:border-stone-900 outline-none py-1 px-1 font-mono text-sm"
-                step="0.25"
-              />
-              <select
-                value={ing.unit || 'whole'}
-                onChange={(e) => updateIngredient(i, { unit: e.target.value })}
-                className="bg-transparent border-b border-stone-300 focus:border-stone-900 outline-none py-1 px-1 text-sm"
-              >
-                <option value="whole">—</option>
-                <option value="cup">cup</option>
-                <option value="tbsp">tbsp</option>
-                <option value="tsp">tsp</option>
-                <option value="ml">ml</option>
-                <option value="l">l</option>
-                <option value="g">g</option>
-                <option value="kg">kg</option>
-                <option value="oz">oz</option>
-                <option value="lb">lb</option>
-                <option value="pinch">pinch</option>
-                <option value="dash">dash</option>
-              </select>
-              <input
-                value={ing.name}
-                onChange={(e) => updateIngredient(i, { name: e.target.value })}
-                placeholder="Ingredient"
-                className="bg-transparent border-b border-stone-300 focus:border-stone-900 outline-none py-1 px-1"
-              />
-              <button onClick={() => removeIngredient(i)} className="text-stone-400 hover:text-red-700">
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-          ))}
-        </div>
-        <button onClick={addIngredient} className="mt-3 font-mono text-[11px] tracking-widest uppercase text-stone-600 hover:text-stone-900 flex items-center gap-1">
-          <Plus className="w-3 h-3" /> Add ingredient
-        </button>
-      </div>
-
-      <div className="mb-8">
-        <h3 className="font-display text-2xl font-medium mb-3">Method</h3>
-        <div className="space-y-3">
-          {draft.steps.map((step, i) => (
-            <div key={step.id} className="border border-stone-300 p-3">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="font-display text-2xl font-light text-stone-500 recipe-num shrink-0">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <input
-                  value={step.title}
-                  onChange={(e) => updateStep(i, { title: e.target.value })}
-                  placeholder="Step title"
-                  className="flex-1 bg-transparent border-b border-stone-200 focus:border-stone-900 outline-none py-1 px-1 font-display font-medium"
-                />
-                <input
-                  type="number"
-                  value={step.timerSeconds || ''}
-                  onChange={(e) => updateStep(i, { timerSeconds: parseInt(e.target.value) || null })}
-                  placeholder="seconds"
-                  className="w-20 bg-transparent border-b border-stone-200 focus:border-stone-900 outline-none py-1 px-1 font-mono text-xs"
-                />
-                <button onClick={() => removeStep(i)} className="text-stone-400 hover:text-red-700">
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-              <textarea
-                value={step.content}
-                onChange={(e) => updateStep(i, { content: e.target.value })}
-                rows={2}
-                placeholder="What to do..."
-                className="w-full bg-transparent text-sm focus:outline-none resize-none"
-              />
-            </div>
-          ))}
-        </div>
-        <button onClick={addStep} className="mt-3 font-mono text-[11px] tracking-widest uppercase text-stone-600 hover:text-stone-900 flex items-center gap-1">
-          <Plus className="w-3 h-3" /> Add step
-        </button>
-      </div>
-    </div>
-  );
-}
-
-function Field({ label, children }) {
-  return (
-    <div>
-      <label className="block font-mono text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-1">
-        {label}
-      </label>
-      {children}
-    </div>
-  );
-}
-
-function TextInput({ value, onChange, type = 'text' }) {
-  return (
-    <input
-      type={type}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className="w-full bg-transparent border-b border-stone-300 focus:border-stone-900 outline-none py-1 px-1 text-sm"
-    />
   );
 }
