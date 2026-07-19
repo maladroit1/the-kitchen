@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v2",
-  "dataVersion": "2026-07-19",
+  "dataVersion": "2026-07-19-b",
   "source": "Box folder: Recipes",
   "recipes": [
     {
@@ -12,7 +12,7 @@
       "badge": "Ninja Slushi · Pool Party",
       "icon": "🍧",
       "accent": "#3E7C4F",
-      "description": "Frozen margarita engineered for the Ninja Slushi FS300 — a deliberately strong 12.5% batch that still freezes, because the ratios respect the machine's chemistry window: real sugar builds the slush, too much booze breaks it. Classic lime up front, mango refill pitcher on deck.",
+      "description": "Frozen margarita engineered for the Ninja Slushi FS300 — a deliberately strong batch that still freezes, because the ratios respect the machine's chemistry window: real sugar builds the slush, too much booze breaks it. Three flavors, one physics: pick classic lime, mango, or strawberry below.",
       "baseServings": 8,
       "servingsLabel": "8 oz pool cups",
       "activeMinutes": 10,
@@ -27,102 +27,208 @@
       ],
       "ingredients": [
         {
-          "id": "i1",
+          "id": "c1",
           "name": "limeade (Simply Limeade or from concentrate), fridge-cold",
           "amount": 4,
           "unit": "cup",
-          "section": "The batch — 60 oz, under the 64 oz fill line"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "classic"
+          ]
         },
         {
-          "id": "i2",
+          "id": "c2",
           "name": "blanco tequila, from the freezer",
           "amount": 2,
           "unit": "cup",
-          "section": "The batch — 60 oz, under the 64 oz fill line"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "classic"
+          ]
         },
         {
-          "id": "i3",
+          "id": "c3",
           "name": "triple sec or Cointreau",
           "amount": 0.5,
           "unit": "cup",
-          "section": "The batch — 60 oz, under the 64 oz fill line"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "classic"
+          ]
         },
         {
-          "id": "i4",
+          "id": "c4",
           "name": "fresh lime juice (about 4 limes)",
           "amount": 0.5,
           "unit": "cup",
-          "section": "The batch — 60 oz, under the 64 oz fill line"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "classic"
+          ]
         },
         {
-          "id": "i5",
+          "id": "c5",
           "name": "agave nectar or simple syrup",
           "amount": 0.25,
           "unit": "cup",
-          "section": "The batch — 60 oz, under the 64 oz fill line"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "classic"
+          ]
         },
         {
-          "id": "i6",
+          "id": "c6",
           "name": "cold water (the ABV trim — don't skip)",
           "amount": 0.33,
           "unit": "cup",
-          "section": "The batch — 60 oz, under the 64 oz fill line"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "classic"
+          ]
         },
         {
-          "id": "i7",
-          "name": "kosher salt (plus a Tajín plate for the brave)",
-          "amount": 0.25,
-          "unit": "cup",
-          "section": "Rims and garnish"
-        },
-        {
-          "id": "i8",
-          "name": "limes, cut into wheels",
-          "amount": 2,
-          "unit": "whole",
-          "section": "Rims and garnish"
-        },
-        {
-          "id": "i9",
+          "id": "m1",
           "name": "mango nectar (Jumex/Goya — real sugar is a feature)",
           "amount": 3,
           "unit": "cup",
-          "section": "Batch two — mango refill, same 12.5%"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "mango"
+          ]
         },
         {
-          "id": "i10",
-          "name": "limeade",
+          "id": "m2",
+          "name": "limeade, fridge-cold",
           "amount": 1,
           "unit": "cup",
-          "section": "Batch two — mango refill, same 12.5%"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "mango"
+          ]
         },
         {
-          "id": "i11",
-          "name": "fresh lime juice",
-          "amount": 0.25,
-          "unit": "cup",
-          "section": "Batch two — mango refill, same 12.5%"
-        },
-        {
-          "id": "i12",
-          "name": "blanco tequila",
+          "id": "m3",
+          "name": "blanco tequila, from the freezer",
           "amount": 2,
           "unit": "cup",
-          "section": "Batch two — mango refill, same 12.5%"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "mango"
+          ]
         },
         {
-          "id": "i13",
-          "name": "triple sec",
+          "id": "m4",
+          "name": "triple sec or Cointreau",
           "amount": 0.5,
           "unit": "cup",
-          "section": "Batch two — mango refill, same 12.5%"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "mango"
+          ]
         },
         {
-          "id": "i14",
+          "id": "m5",
+          "name": "fresh lime juice (about 2 limes)",
+          "amount": 0.25,
+          "unit": "cup",
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "mango"
+          ]
+        },
+        {
+          "id": "m6",
           "name": "cold water",
           "amount": 0.75,
           "unit": "cup",
-          "section": "Batch two — mango refill, same 12.5%"
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "mango"
+          ]
+        },
+        {
+          "id": "st1",
+          "name": "strawberry purée (or blended fresh-frozen berries, strained)",
+          "amount": 3,
+          "unit": "cup",
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "strawberry"
+          ]
+        },
+        {
+          "id": "st2",
+          "name": "limeade, fridge-cold",
+          "amount": 1,
+          "unit": "cup",
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "strawberry"
+          ]
+        },
+        {
+          "id": "st3",
+          "name": "blanco tequila, from the freezer",
+          "amount": 2,
+          "unit": "cup",
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "strawberry"
+          ]
+        },
+        {
+          "id": "st4",
+          "name": "triple sec or Cointreau",
+          "amount": 0.5,
+          "unit": "cup",
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "strawberry"
+          ]
+        },
+        {
+          "id": "st5",
+          "name": "fresh lime juice (about 2 limes)",
+          "amount": 0.25,
+          "unit": "cup",
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "strawberry"
+          ]
+        },
+        {
+          "id": "st6",
+          "name": "agave nectar or simple syrup",
+          "amount": 0.25,
+          "unit": "cup",
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "strawberry"
+          ]
+        },
+        {
+          "id": "st7",
+          "name": "cold water",
+          "amount": 0.75,
+          "unit": "cup",
+          "section": "The batch — 60 oz, under the 64 oz fill line",
+          "variantIds": [
+            "strawberry"
+          ]
+        },
+        {
+          "id": "g1",
+          "name": "kosher salt (plus a Tajín plate for the brave)",
+          "amount": 0.25,
+          "unit": "cup",
+          "section": "Rims and garnish — all flavors"
+        },
+        {
+          "id": "g2",
+          "name": "limes, cut into wheels",
+          "amount": 2,
+          "unit": "whole",
+          "section": "Rims and garnish — all flavors"
         }
       ],
       "steps": [
@@ -135,7 +241,7 @@
         {
           "id": "s2",
           "title": "Stir the batch",
-          "content": "Combine limeade, tequila, triple sec, lime juice, agave, and water in a pitcher. Stir until the agave fully dissolves."
+          "content": "Combine everything for your flavor in a pitcher and stir until the sweetener fully dissolves."
         },
         {
           "id": "s3",
@@ -157,11 +263,32 @@
       "notes": [
         {
           "title": "The machine's chemistry window",
-          "body": "The Slushi freezes the mix partially and scrapes off ice crystals, which only works in a window: sugar at or above ~4–5 g/100 ml (this batch is ~10) and alcohol between ~8% and ~14% on Spiked Slush. Under 8% it freezes brick-solid; over 14% it spins forever. This build sits at 12.5% — deliberately strong, inside the window, but on the slow side to set."
+          "body": "The Slushi freezes the mix partially and scrapes off ice crystals, which only works in a window: sugar at or above ~4–5 g/100 ml and alcohol between ~8% and ~14% on Spiked Slush. Under 8% it freezes brick-solid; over 14% it spins forever. All three flavor builds land at 12.2–12.6% ABV — deliberately strong, inside the window, on the slow side to set."
         },
         {
           "title": "No diet anything",
           "body": "Sugar is structural, not just flavor — it's the antifreeze that keeps the batch scrapeable. Sugar-free limeade or diet mixers will trip the low-sugar alert or freeze into a block."
+        },
+        {
+          "title": "Classic lime math",
+          "body": "10 g/100 ml sugar, 12.5% ABV — the reference build the freeze window was tuned around.",
+          "variantIds": [
+            "classic"
+          ]
+        },
+        {
+          "title": "Why no agave here",
+          "body": "Mango nectar carries ~13 g/100 ml sugar on its own; adding syrup would push the batch too sweet. Lands at ~8.3 g/100 ml sugar, 12.6% ABV.",
+          "variantIds": [
+            "mango"
+          ]
+        },
+        {
+          "title": "Purée math",
+          "body": "Strawberry purée carries less sugar than nectar, so the ¼ cup agave comes back. Lands at ~8.2 g/100 ml sugar, 12.2% ABV. Sweetened purée: skip the agave.",
+          "variantIds": [
+            "strawberry"
+          ]
         },
         {
           "title": "These are real drinks",
@@ -169,17 +296,31 @@
         },
         {
           "title": "Party ops",
-          "body": "Leave the machine running between pours — it holds texture for hours. Keep batch two stirred in a fridge pitcher and top up the vessel as the level drops; matching the ABV keeps the texture stable through refills."
-        },
-        {
-          "title": "Strawberry instead of mango",
-          "body": "Swap the mango nectar for 3 cups strawberry purée plus ¼ cup agave (purée carries less sugar than nectar). Same everything else."
+          "body": "Leave the machine running between pours — it holds texture for hours. Mix a SECOND flavor as a stirred pitcher in the fridge and top up the vessel as the level drops; all three builds match ABV, so refills keep the texture stable."
         },
         {
           "title": "Session-strength remix",
-          "body": "For an all-afternoon pace: 1½ cups tequila and an extra ¾ cup limeade lands near 9% — freezes faster and shrugs off warm refills."
+          "body": "For an all-afternoon pace: drop the tequila to 1½ cups and add ¾ cup of the flavor base — lands near 9%, freezes faster, and shrugs off warm refills."
         }
-      ]
+      ],
+      "variants": {
+        "label": "Flavor",
+        "options": [
+          {
+            "id": "classic",
+            "name": "Classic lime",
+            "default": true
+          },
+          {
+            "id": "mango",
+            "name": "Mango"
+          },
+          {
+            "id": "strawberry",
+            "name": "Strawberry"
+          }
+        ]
+      }
     },
     {
       "id": "loco-moco-v1",

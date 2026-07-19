@@ -234,6 +234,7 @@ export default function RecipeApp() {
           />
         ) : view.type === 'detail' ? (
           <DetailView
+            key={view.id}
             recipe={recipes.find(r => r.id === view.id)}
             allRecipes={recipes}
             onBack={() => setView({ type: 'list' })}
@@ -414,6 +415,12 @@ function RecipeCard({ recipe, onClick, delay = 0, siblingCount = 1 }) {
 function DetailView({ recipe, allRecipes, onBack, onSelect }) {
   const [servings, setServings] = useState(recipe?.baseServings || 1);
   const [unitSystem, setUnitSystem] = useState('original');
+  const variantOptions = recipe?.variants?.options || null;
+  const [pickedVariant, setPickedVariant] = useState(null);
+  const activeVariant = pickedVariant
+    ?? (variantOptions ? (variantOptions.find(o => o.default) || variantOptions[0]).id : null);
+  // Items without variantIds are shared across all variants.
+  const inVariant = (item) => !activeVariant || !item.variantIds || item.variantIds.includes(activeVariant);
 
   if (!recipe) {
     return (
@@ -433,7 +440,7 @@ function DetailView({ recipe, allRecipes, onBack, onSelect }) {
   const sectionedIngredients = useMemo(() => {
     const groups = [];
     let current = null;
-    for (const ing of recipe.ingredients || []) {
+    for (const ing of (recipe.ingredients || []).filter(inVariant)) {
       const sec = ing.section || null;
       if (!current || current.section !== sec) {
         current = { section: sec, items: [] };
@@ -442,7 +449,7 @@ function DetailView({ recipe, allRecipes, onBack, onSelect }) {
       current.items.push(ing);
     }
     return groups;
-  }, [recipe]);
+  }, [recipe, activeVariant]);
 
   return (
     <div className="max-w-3xl mx-auto px-5 py-6 sm:px-8 sm:py-10 slide-up">
@@ -567,6 +574,32 @@ function DetailView({ recipe, allRecipes, onBack, onSelect }) {
         )}
       </div>
 
+      {variantOptions && (
+        <div className="mb-8">
+          <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-stone-500 mb-3">
+            {recipe.variants.label || 'Variation'}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {variantOptions.map(opt => (
+              <button
+                key={opt.id}
+                onClick={() => setPickedVariant(opt.id)}
+                className={`px-3 py-1.5 font-mono text-[10px] tracking-widest uppercase border transition-colors ${
+                  activeVariant === opt.id
+                    ? 'cursor-default'
+                    : 'bg-stone-50 border-stone-300 hover:border-stone-900 text-stone-900'
+                }`}
+                style={activeVariant === opt.id
+                  ? { background: accent, borderColor: accent, color: '#FAF6EE' }
+                  : {}}
+              >
+                {opt.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       <section className="mb-12">
         <div className="flex items-center justify-between mb-5">
           <h2 className="font-display text-3xl font-medium text-stone-900">Ingredients</h2>
@@ -591,17 +624,17 @@ function DetailView({ recipe, allRecipes, onBack, onSelect }) {
       <section className="mb-12">
         <h2 className="font-display text-3xl font-medium mb-5 text-stone-900">Method</h2>
         <ol className="space-y-5">
-          {(recipe.steps || []).map((step, idx) => (
+          {(recipe.steps || []).filter(inVariant).map((step, idx) => (
             <StepRow key={step.id} step={step} index={idx + 1} accent={accent} />
           ))}
         </ol>
       </section>
 
-      {recipe.notes && recipe.notes.length > 0 && (
+      {recipe.notes && recipe.notes.filter(inVariant).length > 0 && (
         <section className="mb-12 border-t border-stone-300 pt-8">
           <h2 className="font-mono text-[10px] tracking-[0.25em] uppercase text-stone-500 mb-5">Notes from the cook</h2>
           <div className="space-y-4">
-            {recipe.notes.map((note, i) => (
+            {recipe.notes.filter(inVariant).map((note, i) => (
               <div key={i} className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-2 sm:gap-6">
                 <div className="font-display italic font-medium text-stone-900 text-base">{note.title}</div>
                 <div className="text-stone-700 leading-relaxed text-sm">{note.body}</div>
