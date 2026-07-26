@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v2",
-  "dataVersion": "2026-07-19-b",
+  "dataVersion": "2026-07-26-a",
   "source": "Box folder: Recipes",
   "recipes": [
     {
@@ -5965,6 +5965,133 @@
         {
           "title": "Deeper complexity",
           "body": "Substitute ½ cup apple cider vinegar for part of the rice vinegar."
+        }
+      ]
+    },
+    {
+      "id": "peppercorn-cognac-sauce-v1",
+      "family": "peppercorn-cognac-sauce",
+      "title": "Peppercorn Cognac Sauce",
+      "version": "v1",
+      "author": "Kenneth and Claude",
+      "badge": "Sauce au Poivre · Steakhouse",
+      "icon": "🥩",
+      "accent": "#7A4E2E",
+      "description": "Classic steakhouse finishing sauce for seared steak — cracked pepper, shallot, cognac, and cream, built right in the sear pan so it lifts the fond for free. Makes a plain salt-and-pepper strip read as fancy with about 15 minutes of extra work.",
+      "baseServings": 2,
+      "servingsLabel": "steaks' worth (~½ cup)",
+      "activeMinutes": 15,
+      "totalMinutes": 15,
+      "tags": [
+        "sauce",
+        "steak",
+        "french",
+        "pan-sauce",
+        "cognac",
+        "steakhouse"
+      ],
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "whole black peppercorns (or black + a few green/pink for depth)",
+          "amount": 2,
+          "unit": "tbsp",
+          "section": "Sauce"
+        },
+        {
+          "id": "i2",
+          "name": "butter",
+          "amount": 1,
+          "unit": "tbsp",
+          "section": "Sauce"
+        },
+        {
+          "id": "i3",
+          "name": "small shallot, finely minced (~2 tbsp)",
+          "amount": 1,
+          "unit": "whole",
+          "section": "Sauce"
+        },
+        {
+          "id": "i4",
+          "name": "cognac (brandy is the standard sub)",
+          "amount": 0.33,
+          "unit": "cup",
+          "section": "Sauce"
+        },
+        {
+          "id": "i5",
+          "name": "beef stock, low-sodium",
+          "amount": 0.75,
+          "unit": "cup",
+          "section": "Sauce"
+        },
+        {
+          "id": "i6",
+          "name": "heavy cream",
+          "amount": 0.5,
+          "unit": "cup",
+          "section": "Sauce"
+        },
+        {
+          "id": "i7",
+          "name": "Dijon mustard",
+          "amount": 1,
+          "unit": "tsp",
+          "section": "Sauce"
+        },
+        {
+          "id": "i8",
+          "name": "flaky salt, to taste",
+          "amount": 1,
+          "unit": "pinch",
+          "section": "Sauce"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "title": "Crack the peppercorns",
+          "content": "Crush the peppercorns coarse under a heavy pan or pulse a few times. You want cracked, not powder — the texture is the point."
+        },
+        {
+          "id": "s2",
+          "title": "Soften the shallot",
+          "content": "After searing the steaks, pour off excess fat but keep the fond (the browned bits). Drop to medium heat, add the butter and shallot, and cook ~2 minutes until soft."
+        },
+        {
+          "id": "s3",
+          "title": "Deglaze with cognac",
+          "content": "Off the heat, add the cognac (pull the pan from the flame first — it can flare). Return to heat and reduce by half, ~1–2 minutes, scraping up the fond."
+        },
+        {
+          "id": "s4",
+          "title": "Reduce with stock + pepper",
+          "content": "Add the beef stock and cracked peppercorns. Simmer and reduce by half again, ~3–4 minutes."
+        },
+        {
+          "id": "s5",
+          "title": "Cream + Dijon",
+          "content": "Stir in the heavy cream and Dijon. Simmer gently until it coats the back of a spoon, ~3–5 minutes. Salt to taste."
+        },
+        {
+          "id": "s6",
+          "title": "Finish",
+          "content": "Pour in any resting-steak juices, then spoon the sauce over the sliced strip."
+        }
+      ],
+      "notes": [
+        {
+          "title": "No cognac?",
+          "body": "Brandy is the standard substitute. In a pinch, dry sherry or a splash of whiskey both work."
+        },
+        {
+          "title": "Silkier finish",
+          "body": "Off the heat, swirl in a cold pat of butter (monter au beurre) for extra gloss and body."
+        },
+        {
+          "title": "Dial down the heat",
+          "body": "Green peppercorns in brine (drained) give a milder, more aromatic sauce — the move if black pepper is too aggressive for the table."
         }
       ]
     }
