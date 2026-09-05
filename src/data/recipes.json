@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v2",
-  "dataVersion": "2026-07-26-a",
+  "dataVersion": "2026-09-05",
   "source": "Box folder: Recipes",
   "recipes": [
     {
@@ -6092,6 +6092,154 @@
         {
           "title": "Dial down the heat",
           "body": "Green peppercorns in brine (drained) give a milder, more aromatic sauce — the move if black pepper is too aggressive for the table."
+        }
+      ]
+    },
+    {
+      "id": "chicken-au-poivre-v1",
+      "family": "chicken-au-poivre",
+      "title": "Chicken au Poivre",
+      "version": "v1",
+      "author": "Ken and Codex",
+      "badge": "High Protein · Lighter Sauce",
+      "icon": "🍗",
+      "accent": "#7A4E2E",
+      "description": "This recipe adapts an existing peppercorn cognac sauce using lean chicken, less cream, and Greek yogurt.",
+      "baseServings": 3,
+      "activeMinutes": 25,
+      "totalMinutes": 30,
+      "tags": [
+        "chicken",
+        "french",
+        "high-protein",
+        "pan-sauce",
+        "weeknight"
+      ],
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "raw boneless skinless chicken breast",
+          "amount": 600,
+          "unit": "g",
+          "section": "Chicken"
+        },
+        {
+          "id": "i2",
+          "name": "olive oil",
+          "amount": 1,
+          "unit": "tsp",
+          "section": "Chicken"
+        },
+        {
+          "id": "i3",
+          "name": "coarsely cracked black pepper, plus more to taste",
+          "amount": 1,
+          "unit": "tsp",
+          "section": "Chicken"
+        },
+        {
+          "id": "i4",
+          "name": "kosher salt, to taste",
+          "amount": 0.5,
+          "unit": "tsp",
+          "section": "Chicken"
+        },
+        {
+          "id": "i5",
+          "name": "shallot, finely minced",
+          "amount": 30,
+          "unit": "g",
+          "section": "Sauce"
+        },
+        {
+          "id": "i6",
+          "name": "cognac (optional)",
+          "amount": 1,
+          "unit": "tbsp",
+          "section": "Sauce"
+        },
+        {
+          "id": "i7",
+          "name": "low-sodium chicken stock",
+          "amount": 180,
+          "unit": "ml",
+          "section": "Sauce"
+        },
+        {
+          "id": "i8",
+          "name": "Dijon mustard",
+          "amount": 2,
+          "unit": "tsp",
+          "section": "Sauce"
+        },
+        {
+          "id": "i9",
+          "name": "heavy cream",
+          "amount": 30,
+          "unit": "ml",
+          "section": "Sauce"
+        },
+        {
+          "id": "i10",
+          "name": "plain nonfat Greek yogurt",
+          "amount": 100,
+          "unit": "g",
+          "section": "Sauce"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "title": "Prep the chicken",
+          "content": "Slice the chicken into thin cutlets. Pound the cutlets to an even half inch thickness. Dry the chicken and season it."
+        },
+        {
+          "id": "s2",
+          "title": "Sear the chicken",
+          "content": "Heat oil in a pan over medium-high heat. Cook the chicken for 3–5 minutes on each side until it reaches 165°F at the thickest point. Rest the chicken. Batch the cooking if needed."
+        },
+        {
+          "id": "s3",
+          "title": "Start the sauce base",
+          "content": "Add the shallot to the pan over medium heat. Add a splash from the measured stock. Cook for 2 minutes."
+        },
+        {
+          "id": "s4",
+          "title": "Add cognac",
+          "content": "Remove the pan from the heat before adding the cognac. Return the pan to the heat briefly to reduce the liquid. Do not flambé."
+        },
+        {
+          "id": "s5",
+          "title": "Simmer the sauce",
+          "content": "Add the remaining stock and the Dijon. Scrape up the browned bits. Simmer for 3–5 minutes until the liquid reduces by half."
+        },
+        {
+          "id": "s6",
+          "title": "Incorporate dairy",
+          "content": "Add the cream and simmer gently for 1 minute. Remove the pan from the heat and let the bubbling stop. Temper the yogurt with warm sauce, then fold it in. Never boil the sauce after adding the yogurt."
+        },
+        {
+          "id": "s7",
+          "title": "Finish",
+          "content": "Stir in the resting juices. Spoon the sauce over the chicken."
+        }
+      ],
+      "notes": [
+        {
+          "title": "Nutrition",
+          "body": "Approximately 340 calories and 49 g protein per serving including all sauce. This includes optional cognac and excludes sides. Values depend on brands."
+        },
+        {
+          "title": "Texture",
+          "body": "Real cream rounds the flavor. Yogurt adds a slight tang."
+        },
+        {
+          "title": "Glutenfree",
+          "body": "Check stock and Dijon."
+        },
+        {
+          "title": "Version",
+          "body": "Untested proposed v1."
         }
       ]
     }
