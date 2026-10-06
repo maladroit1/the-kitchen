@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v2",
-  "dataVersion": "2026-09-05",
+  "dataVersion": "2026-10-06",
   "source": "Box folder: Recipes",
   "recipes": [
     {
@@ -6240,6 +6240,128 @@
         {
           "title": "Version",
           "body": "Untested proposed v1."
+        }
+      ]
+    },
+    {
+      "id": "burnt-basque-cheesecake-loaf-v1",
+      "family": "burnt-basque-cheesecake-loaf",
+      "title": "Burnt Basque Cheesecake in a Loaf Pan",
+      "version": "v1",
+      "author": "Saved recipe",
+      "badge": "Make Ahead · Crustless",
+      "icon": "🍰",
+      "accent": "#9A5735",
+      "description": "A caramelized, crustless cheesecake baked at high heat for a burnt top and creamy center.",
+      "baseServings": 6,
+      "servingsLabel": "slices (estimated)",
+      "activeMinutes": 15,
+      "totalMinutes": 360,
+      "tags": [
+        "dessert",
+        "cheesecake",
+        "basque",
+        "make-ahead",
+        "loaf-pan"
+      ],
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "cream cheese, softened",
+          "amount": 16,
+          "unit": "oz"
+        },
+        {
+          "id": "i2",
+          "name": "granulated sugar",
+          "amount": 0.75,
+          "unit": "cup"
+        },
+        {
+          "id": "i3",
+          "name": "eggs",
+          "amount": 3,
+          "unit": "whole"
+        },
+        {
+          "id": "i4",
+          "name": "heavy cream",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "id": "i5",
+          "name": "vanilla extract",
+          "amount": 1,
+          "unit": "tsp"
+        },
+        {
+          "id": "i6",
+          "name": "salt",
+          "amount": 0.25,
+          "unit": "tsp"
+        },
+        {
+          "id": "i7",
+          "name": "all-purpose flour",
+          "amount": 1,
+          "unit": "tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "title": "Prepare the pan",
+          "content": "Preheat oven to 425°F (220°C). Line a 9x5-inch loaf pan with parchment paper, leaving an overhang."
+        },
+        {
+          "id": "s2",
+          "title": "Beat the cream cheese and sugar",
+          "content": "Beat the softened cream cheese and granulated sugar until completely smooth."
+        },
+        {
+          "id": "s3",
+          "title": "Add the eggs",
+          "content": "Add the eggs one at a time, mixing after each addition."
+        },
+        {
+          "id": "s4",
+          "title": "Finish the batter",
+          "content": "Stir in the heavy cream, vanilla extract, salt, and all-purpose flour until silky smooth."
+        },
+        {
+          "id": "s5",
+          "title": "Bake",
+          "content": "Pour the batter into the prepared pan. Bake for 35–45 minutes, until the top is deeply golden brown and slightly burnt while the center still has a gentle jiggle. Begin checking at 35 minutes.",
+          "timerSeconds": 2100
+        },
+        {
+          "id": "s6",
+          "title": "Cool and chill",
+          "content": "Cool at room temperature for about 1 hour, then refrigerate for at least 4 hours or overnight."
+        },
+        {
+          "id": "s7",
+          "title": "Serve",
+          "content": "Lift the chilled cheesecake from the pan using the parchment overhang. Slice and serve chilled or slightly softened at room temperature."
+        }
+      ],
+      "notes": [
+        {
+          "title": "Pan and yield",
+          "body": "Use a 9 × 5-inch loaf pan. Expect about six slices. Pan size and yield are added guidance; the screenshot did not specify them."
+        },
+        {
+          "title": "Timing",
+          "body": "Allow about 15 minutes of prep and about 6 hours total, including 35–45 minutes of baking, about 1 hour of cooling, and at least 4 hours in the refrigerator. Overnight chilling also works."
+        },
+        {
+          "title": "Scaling",
+          "body": "For a larger or smaller batch, reassess pan capacity and bake time. Keep the oven at 425°F (220°C) and judge doneness by the deeply browned top and gentle center jiggle."
+        },
+        {
+          "title": "Source",
+          "body": "From Ken’s saved screenshot of “Burnt Basque Cheesecake in a Loaf Pan.” Ingredients and method preserved; pan size, yield, and prep time added as practical estimates. Untested by Ken."
         }
       ]
     }
