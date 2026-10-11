@@ -6374,7 +6374,7 @@
       "badge": "Gluten-Free · Untested v1",
       "icon": "🥩",
       "accent": "#8B4A32",
-      "description": "Peppery New York strip with a light shallot-Dijon pan sauce and crisp shoestring fries. Frozen fries keep dinner simple; a homemade shoestring option is included.",
+      "description": "Peppery New York strip with a light shallot-Dijon sauce and shoestring fries. Includes a velveted, lightly cornstarch-coated pan-fried alternative, instructions for making one steak each way, and optional homemade fries.",
       "baseServings": 2,
       "servingsLabel": "servings",
       "activeMinutes": 25,
@@ -6530,6 +6530,34 @@
         }
       ],
       "notes": [
+        {
+          "title": "Two steaks, two versions",
+          "body": "For a side-by-side meal for two, use one 8 oz / 225 g steak whole and slice the other for the velveted, cornstarch-coated version below. Use the original full batch of sauce and fries for both. The whole steak gets only HALF the original steak seasoning and oil: ⅜ tsp fine salt, ¼ tsp black pepper, and 1½ tsp oil. The sliced steak gets the separate quantities below INSTEAD of its original salt, pepper and oil; do not dry-brine or salt it twice. Allow about 45–50 minutes with frozen fries."
+        },
+        {
+          "title": "Alternative: ingredients for one 8 oz / 225 g steak",
+          "body": "Marinade: 1 tbsp water, 1/16 tsp baking soda (half a level ⅛ tsp; NOT baking powder), ¼ tsp fine salt, ¼ tsp black pepper, 1 tsp gluten-free cornstarch, and 1 tsp neutral oil. Coating: an additional 1 tbsp gluten-free cornstarch. Pan-frying: 3 tbsp neutral oil. Use one of the existing steaks, not an extra steak. These note-text quantities are fixed for 8 oz / 225 g raw beef and do not change with the serving slider. For a different weight, multiply marinade and coating quantities by raw beef weight divided by 225 g; use enough frying oil to maintain a thin layer and cook in batches."
+        },
+        {
+          "title": "Alternative step 1: slice and velvet",
+          "body": "Slice across the grain into broad, bite-size pieces about ¼ inch / 6 mm thick. Dissolve the baking soda in the water. Mix with the beef, salt and pepper until most of the water is absorbed, then mix in the marinade cornstarch and oil. Refrigerate for 15–20 minutes. Do not leave this version overnight. Do not rinse or pat away the marinade; tip off any unabsorbed liquid."
+        },
+        {
+          "title": "Alternative step 2: lightly coat",
+          "body": "Just before frying, sprinkle over the additional dry cornstarch and toss gently, separating the pieces. Shake off loose excess. Aim for a thin, slightly tacky coating; do not make a thick batter. No breadcrumbs, wheat flour, egg, soy sauce or oyster sauce are needed."
+        },
+        {
+          "title": "Alternative step 3: pan-fry",
+          "body": "Heat the frying oil in a second 10–12-inch skillet over medium-high heat until shimmering, not smoking. Add the coated beef in a single uncrowded layer; use two batches if needed. Fry about 1–2 minutes per side until the coating is golden and the meat is cooked through. Check the thickest piece from the side with a thin-tip thermometer for 145°F before removal; timing varies with thickness and heat. Transfer to a rack and rest uncovered for at least 3 minutes. Do not pile up the pieces or cover them, which softens the coating."
+        },
+        {
+          "title": "Cooking both versions together",
+          "body": "Marinate the sliced steak first, then start the frozen fries according to the bag. Cook the whole steak by the main method and rest it on a warm plate. Make the sauce in that steak skillet using its browned pan bits. Near the end of sauce reduction, pan-fry the coated beef in the second skillet. Take the sauce off the heat while managing the frying if needed so it does not reduce too far. Finish with its reserved butter, parsley and whole-steak resting juices. Divide the sauce between the two portions, serving it alongside the coated beef for dipping. Keep fries unsauced. A second skillet avoids loose cornstarch thickening the sauce."
+        },
+        {
+          "title": "Alternative technique references",
+          "body": "This is an untested combination of a light velveting marinade and a dry cornstarch coating. Cornstarch makes the coating; cross-grain slicing and the small measured baking-soda addition help with tenderness. Technique references: https://thewoksoflife.com/prepare-beef-for-stir-fry/ and https://www.recipetineats.com/crispy-sticky-mongolian-beef/ . These references do not establish that this exact steak-frites variation has been tested."
+        },
         {
           "title": "Optional homemade shoestring fries: ingredients",
           "body": "Use the potatoes listed in the optional ingredient section instead of the frozen fries. You also need neutral frying oil and salt to taste. Oil quantity depends on the pot: use a 2-inch depth in a deep, heavy pot, filled no more than one-third full. Do not multiply frying-oil depth when scaling servings; cook more batches."
