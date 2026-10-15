@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v2",
-  "dataVersion": "2026-10-06",
+  "dataVersion": "2026-10-11",
   "source": "Box folder: Recipes",
   "recipes": [
     {
@@ -6358,6 +6358,233 @@
         {
           "title": "Scaling",
           "body": "For a larger or smaller batch, reassess pan capacity and bake time. Keep the oven at 425°F (220°C) and judge doneness by the deeply browned top and gentle center jiggle."
+        }
+      ]
+    },
+    {
+      "id": "steak-frites-shallot-dijon-v1",
+      "family": "steak-frites-shallot-dijon",
+      "title": "Gluten-Free Steak Frites with Shallot-Dijon Sauce",
+      "version": "v1",
+      "author": "The Kitchen",
+      "badge": "Gluten-Free · Untested v1",
+      "icon": "🥩",
+      "accent": "#8B4A32",
+      "description": "Peppery New York strip with a light shallot-Dijon sauce and shoestring fries. Includes a velveted, lightly cornstarch-coated pan-fried alternative, instructions for making one steak each way, and optional homemade fries.",
+      "baseServings": 2,
+      "servingsLabel": "servings",
+      "activeMinutes": 25,
+      "totalMinutes": 35,
+      "tags": [
+        "beef",
+        "steak",
+        "french",
+        "gluten-free",
+        "shoestring-fries",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "New York strip steaks, each about 8 oz / 225 g and 1 inch thick",
+          "amount": 2,
+          "unit": "whole",
+          "section": "Steak"
+        },
+        {
+          "id": "i2",
+          "name": "fine salt, for the steaks",
+          "amount": 0.75,
+          "unit": "tsp",
+          "section": "Steak"
+        },
+        {
+          "id": "i3",
+          "name": "freshly ground black pepper",
+          "amount": 0.5,
+          "unit": "tsp",
+          "section": "Steak"
+        },
+        {
+          "id": "i4",
+          "name": "neutral high-heat oil, such as avocado or canola",
+          "amount": 1,
+          "unit": "tbsp",
+          "section": "Steak"
+        },
+        {
+          "id": "i5",
+          "name": "frozen shoestring fries, labeled gluten-free",
+          "amount": 300,
+          "unit": "g",
+          "section": "Frozen fries"
+        },
+        {
+          "id": "i6",
+          "name": "medium shallot, finely minced (about 40 g each)",
+          "amount": 1,
+          "unit": "whole",
+          "section": "Shallot-Dijon sauce"
+        },
+        {
+          "id": "i7",
+          "name": "small garlic clove, minced",
+          "amount": 1,
+          "unit": "whole",
+          "section": "Shallot-Dijon sauce"
+        },
+        {
+          "id": "i8",
+          "name": "unsalted butter, divided; keep half cold",
+          "amount": 1,
+          "unit": "tbsp",
+          "section": "Shallot-Dijon sauce"
+        },
+        {
+          "id": "i9",
+          "name": "dry white wine",
+          "amount": 0.3333333333333333,
+          "unit": "cup",
+          "section": "Shallot-Dijon sauce"
+        },
+        {
+          "id": "i10",
+          "name": "low-sodium beef stock, labeled gluten-free",
+          "amount": 0.5,
+          "unit": "cup",
+          "section": "Shallot-Dijon sauce"
+        },
+        {
+          "id": "i11",
+          "name": "Dijon mustard, gluten-free",
+          "amount": 2,
+          "unit": "tsp",
+          "section": "Shallot-Dijon sauce"
+        },
+        {
+          "id": "i12",
+          "name": "dried thyme",
+          "amount": 0.25,
+          "unit": "tsp",
+          "section": "Shallot-Dijon sauce"
+        },
+        {
+          "id": "i13",
+          "name": "chopped fresh parsley",
+          "amount": 1,
+          "unit": "tbsp",
+          "section": "Shallot-Dijon sauce"
+        },
+        {
+          "id": "i14",
+          "name": "russet potatoes, INSTEAD OF the frozen fries; peel if desired",
+          "amount": 450,
+          "unit": "g",
+          "section": "Optional homemade fries"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "title": "Prepare",
+          "content": "Measure the sauce ingredients first. Pat the steaks very dry. Apply the measured fine salt just before searing; if you salted them in advance as described below, do not salt again."
+        },
+        {
+          "id": "s2",
+          "title": "Cook the frozen fries",
+          "content": "Cook straight from frozen using the oven or air-fryer directions on the bag. Spread out without crowding, and turn or shake as directed. Start searing the steaks when the fries have about 15–18 minutes left. For faster air-fryer fries, start them during the steak sear. Adjust the timing to your bag and appliance."
+        },
+        {
+          "id": "s3",
+          "title": "Sear the steaks",
+          "content": "Heat a heavy skillet over medium-high heat until the oil shimmers. Pepper the steaks just before adding them. Sear about 3–4 minutes per side to develop a brown crust, then lower the heat and turn as needed until the center reaches 145°F on a thermometer before removing from the heat. Time varies with thickness and stove; temperature is the endpoint. Cook in batches if the steaks would crowd the pan."
+        },
+        {
+          "id": "s4",
+          "title": "Rest the steaks",
+          "content": "Transfer to a warm plate and rest while making the sauce, roughly 8–10 minutes; USDA guidance requires at least 3 minutes. Reserve the juices. If the fries finish early, keep them uncovered on a rack in a 200°F oven briefly."
+        },
+        {
+          "id": "s5",
+          "title": "Soften the shallot",
+          "content": "Keep the browned pan bits, but remove any black, burnt bits. Pour off excess fat, leaving a thin film. Lower the heat to medium; let an excessively hot pan cool briefly. Add half the butter and the shallot and cook, stirring, for about 2 minutes. Add the garlic and thyme for 30 seconds."
+        },
+        {
+          "id": "s6",
+          "title": "Deglaze",
+          "content": "Take the skillet off the burner and add the measured wine. Return to the heat, scrape up the browned bits, and simmer until the wine reduces by about half, 1–2 minutes."
+        },
+        {
+          "id": "s7",
+          "title": "Finish the sauce",
+          "content": "Stir in the stock and Dijon. Simmer for 3–5 minutes until lightly reduced; it should remain pourable, not become a thick gravy. Off the heat, swirl in the remaining cold butter, parsley, and resting juices. Taste before adding extra salt. Add a splash of water if too concentrated. Do not boil after adding the finishing butter."
+        },
+        {
+          "id": "s8",
+          "title": "Serve",
+          "content": "Slice the steak across the grain and spoon the sauce over it. Serve the hot fries alongside, leaving them unsauced so they stay crisp. Taste the fries before adding salt."
+        }
+      ],
+      "notes": [
+        {
+          "title": "Two steaks, two versions",
+          "body": "For a side-by-side meal for two, use one 8 oz / 225 g steak whole and slice the other for the velveted, cornstarch-coated version below. Use the original full batch of sauce and fries for both. The whole steak gets only HALF the original steak seasoning and oil: ⅜ tsp fine salt, ¼ tsp black pepper, and 1½ tsp oil. The sliced steak gets the separate quantities below INSTEAD of its original salt, pepper and oil; do not dry-brine or salt it twice. Allow about 45–50 minutes with frozen fries."
+        },
+        {
+          "title": "Alternative: ingredients for one 8 oz / 225 g steak",
+          "body": "Marinade: 1 tbsp water, 1/16 tsp baking soda (half a level ⅛ tsp; NOT baking powder), ¼ tsp fine salt, ¼ tsp black pepper, 1 tsp gluten-free cornstarch, and 1 tsp neutral oil. Coating: an additional 1 tbsp gluten-free cornstarch. Pan-frying: 3 tbsp neutral oil. Use one of the existing steaks, not an extra steak. These note-text quantities are fixed for 8 oz / 225 g raw beef and do not change with the serving slider. For a different weight, multiply marinade and coating quantities by raw beef weight divided by 225 g; use enough frying oil to maintain a thin layer and cook in batches."
+        },
+        {
+          "title": "Alternative step 1: slice and velvet",
+          "body": "Slice across the grain into broad, bite-size pieces about ¼ inch / 6 mm thick. Dissolve the baking soda in the water. Mix with the beef, salt and pepper until most of the water is absorbed, then mix in the marinade cornstarch and oil. Refrigerate for 15–20 minutes. Do not leave this version overnight. Do not rinse or pat away the marinade; tip off any unabsorbed liquid."
+        },
+        {
+          "title": "Alternative step 2: lightly coat",
+          "body": "Just before frying, sprinkle over the additional dry cornstarch and toss gently, separating the pieces. Shake off loose excess. Aim for a thin, slightly tacky coating; do not make a thick batter. No breadcrumbs, wheat flour, egg, soy sauce or oyster sauce are needed."
+        },
+        {
+          "title": "Alternative step 3: pan-fry",
+          "body": "Heat the frying oil in a second 10–12-inch skillet over medium-high heat until shimmering, not smoking. Add the coated beef in a single uncrowded layer; use two batches if needed. Fry about 1–2 minutes per side until the coating is golden and the meat is cooked through. Check the thickest piece from the side with a thin-tip thermometer for 145°F before removal; timing varies with thickness and heat. Transfer to a rack and rest uncovered for at least 3 minutes. Do not pile up the pieces or cover them, which softens the coating."
+        },
+        {
+          "title": "Cooking both versions together",
+          "body": "Marinate the sliced steak first, then start the frozen fries according to the bag. Cook the whole steak by the main method and rest it on a warm plate. Make the sauce in that steak skillet using its browned pan bits. Near the end of sauce reduction, pan-fry the coated beef in the second skillet. Take the sauce off the heat while managing the frying if needed so it does not reduce too far. Finish with its reserved butter, parsley and whole-steak resting juices. Divide the sauce between the two portions, serving it alongside the coated beef for dipping. Keep fries unsauced. A second skillet avoids loose cornstarch thickening the sauce."
+        },
+        {
+          "title": "Alternative technique references",
+          "body": "This is an untested combination of a light velveting marinade and a dry cornstarch coating. Cornstarch makes the coating; cross-grain slicing and the small measured baking-soda addition help with tenderness. Technique references: https://thewoksoflife.com/prepare-beef-for-stir-fry/ and https://www.recipetineats.com/crispy-sticky-mongolian-beef/ . These references do not establish that this exact steak-frites variation has been tested."
+        },
+        {
+          "title": "Optional homemade shoestring fries: ingredients",
+          "body": "Use the potatoes listed in the optional ingredient section instead of the frozen fries. You also need neutral frying oil and salt to taste. Oil quantity depends on the pot: use a 2-inch depth in a deep, heavy pot, filled no more than one-third full. Do not multiply frying-oil depth when scaling servings; cook more batches."
+        },
+        {
+          "title": "Homemade fries: cut and dry",
+          "body": "Cut into even ⅛-inch / 3 mm matchsticks with a knife or guarded mandoline. Rinse, soak in cold water for 20–30 minutes, drain, and dry completely with towels. Wet potatoes cause hot oil to splatter."
+        },
+        {
+          "title": "Homemade fries: fry once",
+          "body": "Heat the oil to 375°F using a frying thermometer. Fry small batches for about 2–3 minutes, separating the strands gently, until golden and crisp. Keep the oil between 350–375°F and let it recover between batches. Judge by color and texture; times vary. Drain on a rack and salt immediately. A single fry is sufficient at this thin cut. Do not use the frozen-fries package method for these raw potatoes."
+        },
+        {
+          "title": "Homemade fries: timing",
+          "body": "Allow about 55–65 minutes total, including soaking. Fry the batches before the steak, then hold uncovered on a rack in a 200°F oven for up to about 20 minutes while the steak and sauce cook. Serve promptly; longer holding softens fries."
+        },
+        {
+          "title": "More steak flavor",
+          "body": "Optionally apply the measured steak salt 4–24 hours ahead and refrigerate uncovered on a rack. Pat dry before cooking, add pepper just before searing, and do not repeat the salt. This advance time is excluded from the recipe estimate."
+        },
+        {
+          "title": "Gluten-free preparation",
+          "body": "Use gluten-free fries, stock, and Dijon. Some frozen fries have wheat-containing coatings. Use clean utensils and surfaces; frying oil must not have been used for breaded foods containing gluten. The sauce contains neither flour nor cream. Ingredient guidance: https://celiac.org/what-is-gluten/sources-of-gluten/"
+        },
+        {
+          "title": "Timing, scaling, and testing",
+          "body": "The 35-minute estimate is for two servings with frozen fries. More servings may need extra skillet and fryer batches. Keep steak thickness and temperature targets unchanged as quantities scale. This is a proposed v1 recipe, not a kitchen-tested result."
+        },
+        {
+          "title": "Public cooking references",
+          "body": "USDA steak guidance: 145°F before removal from heat, followed by at least a 3-minute rest. https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/grilling-food-safely . Shoestring cut and single-fry technique reference: https://www.williams-sonoma.com/recipe/Shoestring-Fries.html"
         }
       ]
     }
