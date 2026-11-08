@@ -1,6 +1,6 @@
 {
   "schemaVersion": "v2",
-  "dataVersion": "2026-10-11",
+  "dataVersion": "2026-11-08",
   "source": "Box folder: Recipes",
   "recipes": [
     {
@@ -6589,6 +6589,461 @@
         {
           "title": "Public cooking references",
           "body": "USDA steak guidance: 145°F before removal from heat, followed by at least a 3-minute rest. https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/grilling-food-safely . Shoestring cut and single-fry technique reference: https://www.williams-sonoma.com/recipe/Shoestring-Fries.html"
+        }
+      ]
+    },
+    {
+      "id": "braised-beef-ragu-pasta-bake-v1",
+      "family": "braised-beef-ragu-pasta-bake",
+      "title": "Braised Beef Ragù Pasta Bake with Ricotta & Basil",
+      "version": "v1",
+      "author": "The Kitchen",
+      "badge": "Gluten-Free · Untested v1",
+      "icon": "🥩",
+      "accent": "#8B3F2F",
+      "description": "Fork-tender chuck in a slow-cooked tomato sauce, folded through gluten-free pasta with pockets of ricotta and a browned mozzarella top. Deep tomato and basil flavours; no wine or chilli required.",
+      "baseServings": 6,
+      "servingsLabel": "generous servings",
+      "activeMinutes": 65,
+      "totalMinutes": 315,
+      "tags": [
+        "beef",
+        "pasta",
+        "gluten-free",
+        "slow-cooked",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "boneless beef chuck, trimmed; cut into 4 cm pieces",
+          "amount": 900,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i2",
+          "name": "olive oil, divided equally between searing and vegetables",
+          "amount": 30,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i3",
+          "name": "onion, peeled and finely chopped",
+          "amount": 180,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i4",
+          "name": "carrot, peeled and finely diced",
+          "amount": 100,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i5",
+          "name": "celery, finely diced",
+          "amount": 80,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i6",
+          "name": "garlic, peeled and minced",
+          "amount": 15,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i7",
+          "name": "tomato paste",
+          "amount": 40,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i8",
+          "name": "crushed tomatoes, canned",
+          "amount": 800,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i9",
+          "name": "low-sodium gluten-free beef stock",
+          "amount": 350,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i10",
+          "name": "dried oregano",
+          "amount": 2,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i11",
+          "name": "fine salt, initial allowance; adjust to taste",
+          "amount": 10,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i12",
+          "name": "black pepper",
+          "amount": 1,
+          "unit": "g",
+          "section": "Beef and tomato ragù"
+        },
+        {
+          "id": "i13",
+          "name": "gluten-free penne or rigatoni, dry",
+          "amount": 340,
+          "unit": "g",
+          "section": "Pasta and cheeses"
+        },
+        {
+          "id": "i14",
+          "name": "whole-milk ricotta",
+          "amount": 250,
+          "unit": "g",
+          "section": "Pasta and cheeses"
+        },
+        {
+          "id": "i15",
+          "name": "low-moisture mozzarella, grated",
+          "amount": 180,
+          "unit": "g",
+          "section": "Pasta and cheeses"
+        },
+        {
+          "id": "i16",
+          "name": "Parmesan, finely grated",
+          "amount": 40,
+          "unit": "g",
+          "section": "Pasta and cheeses"
+        },
+        {
+          "id": "i17",
+          "name": "fresh basil leaves, divided equally between sauce and finish",
+          "amount": 15,
+          "unit": "g",
+          "section": "Pasta and cheeses"
+        },
+        {
+          "id": "i18",
+          "name": "reserved pasta cooking water, up to this amount as needed",
+          "amount": 150,
+          "unit": "g",
+          "section": "Pasta and cheeses"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "title": "Brown the beef",
+          "content": "Heat the oven to 325°F / 165°C conventional. Pat the beef dry. Season with half the salt allowance and the pepper. Heat half the oil in a heavy ovenproof pot with a lid; sear in uncrowded batches until browned, about 12–15 minutes total. Transfer to a plate."
+        },
+        {
+          "id": "s2",
+          "title": "Build the tomato base",
+          "content": "Add the remaining oil. Cook the onion, carrot and celery over medium-low heat for 10–12 minutes until softened. Add the garlic for 1 minute, then the tomato paste for 2 minutes. Stir in the crushed tomatoes, stock and oregano, scraping up browned bits. Return the beef and its juices. Bring to a gentle simmer before covering."
+        },
+        {
+          "id": "s3",
+          "title": "Braise until tender",
+          "content": "Braise covered for 2½–3½ hours, checking at 2½ hours. The beef must pull apart easily with a fork; if firm, continue in 20-minute increments. Check that the sauce has not dried around the edges and add a little water if needed. Time is an estimate; tenderness is the endpoint."
+        },
+        {
+          "id": "s4",
+          "title": "Shred and finish the ragù",
+          "content": "Lift out the beef and shred it, discarding any tough fat. Skim excess surface fat from the sauce and return the shredded meat. If watery, simmer uncovered for 10–20 minutes; stop while generously saucy. Taste and add the remaining salt allowance only as needed. Tear the basil and stir in half."
+        },
+        {
+          "id": "s5",
+          "title": "Cook the pasta",
+          "content": "Raise the oven to 375°F / 190°C. While the sauce finishes, boil the pasta in salted water, starting to check 2 minutes before the package al-dente time. Stop when firm but flexible, without a hard chalky centre. Reserve the listed cooking water, then drain."
+        },
+        {
+          "id": "s6",
+          "title": "Combine and layer",
+          "content": "Immediately fold the pasta into the hot ragù. Add reserved cooking water a little at a time only if needed; the mixture should be looser than pasta served straight from the pot. Spread half in the baking dish and dot with half the ricotta. Add the remaining pasta and ricotta, then the mozzarella and Parmesan."
+        },
+        {
+          "id": "s7",
+          "title": "Bake",
+          "content": "Cover with foil and bake for 15 minutes. Uncover and bake 10–15 minutes more, until bubbling through the centre and browned on top. If desired, broil for 1–2 minutes while watching continuously. Use a broiler-safe dish and omit broiling if the dish is not rated for it."
+        },
+        {
+          "id": "s8",
+          "title": "Rest and serve",
+          "content": "Rest for 10 minutes so the sauce settles without drying. Scatter over the remaining basil and serve. Keep chilli flakes at the table if wanted."
+        }
+      ],
+      "notes": [
+        {
+          "title": "Servings and pans",
+          "body": "Base recipe: 6 generous servings in a 23 × 33 cm / 9 × 13 inch baking dish holding at least 3.5 litres. The portion control scales every ingredient by requested servings ÷ 6. For 3 servings, use a 20 cm / 8 inch square dish. For 12, use two full-size dishes; keep the same food depth, rotate as needed, and check each centre. Cooking times and temperatures do not multiply with servings."
+        },
+        {
+          "title": "Weights and gluten-free ingredients",
+          "body": "Gram weights are the recipe standard. Meat weights are raw and trimmed; pasta weight is dry; vegetable weights are after peeling or trimming. Use labelled gluten-free pasta and stock, and gluten-free panko where listed. Use the Recipe or Grams display for measured weights; volume conversions are approximate."
+        },
+        {
+          "title": "Pasta texture",
+          "body": "Aim for firm but flexible pasta before baking. Start checking 2 minutes before the package al-dente time; very brittle or chalky pasta needs longer. Sauce immediately, keeping the mixture a little looser than a plated pasta dish. Add reserved pasta water only as needed. Do not hold the assembled gluten-free pasta for several hours."
+        },
+        {
+          "title": "Recipe status",
+          "body": "Original recipe development, untested v1. Total times and yields are planning estimates. Season to taste and use the doneness cues in the method."
+        },
+        {
+          "title": "Timing",
+          "body": "Allow about 4½–5¼ hours from prep to serving, with roughly 65 minutes of active work. Start promptly in a 5½-hour window. Tougher chuck or a larger batch can take longer; keep the beef pieces the same size when scaling."
+        }
+      ]
+    },
+    {
+      "id": "roasted-garlic-parmesan-chicken-pasta-bake-v1",
+      "family": "roasted-garlic-parmesan-chicken-pasta-bake",
+      "title": "Roasted Garlic Parmesan Chicken Bake with Lemon & Herbs",
+      "version": "v1",
+      "author": "The Kitchen",
+      "badge": "Gluten-Free · Untested v1",
+      "icon": "🍋",
+      "accent": "#6A753B",
+      "description": "Roasted chicken and sweet garlic in a silky Parmesan cream sauce with softened leeks, lemon zest, parsley and thyme. Gluten-free pasta under a crisp Parmesan crumb topping.",
+      "baseServings": 6,
+      "servingsLabel": "generous servings",
+      "activeMinutes": 60,
+      "totalMinutes": 120,
+      "tags": [
+        "chicken",
+        "pasta",
+        "gluten-free",
+        "lemon",
+        "roasted-garlic",
+        "dinner"
+      ],
+      "ingredients": [
+        {
+          "id": "i1",
+          "name": "boneless skinless chicken thighs, raw and trimmed",
+          "amount": 900,
+          "unit": "g",
+          "section": "Roast chicken and garlic"
+        },
+        {
+          "id": "i2",
+          "name": "garlic cloves, peeled, raw and left whole",
+          "amount": 60,
+          "unit": "g",
+          "section": "Roast chicken and garlic"
+        },
+        {
+          "id": "i3",
+          "name": "olive oil; one-third for garlic, two-thirds for chicken",
+          "amount": 30,
+          "unit": "g",
+          "section": "Roast chicken and garlic"
+        },
+        {
+          "id": "i4",
+          "name": "fine salt, initial allowance; half for chicken, remainder to taste",
+          "amount": 8,
+          "unit": "g",
+          "section": "Roast chicken and garlic"
+        },
+        {
+          "id": "i5",
+          "name": "black pepper",
+          "amount": 1,
+          "unit": "g",
+          "section": "Roast chicken and garlic"
+        },
+        {
+          "id": "i6",
+          "name": "leeks, trimmed white and light-green parts, washed and sliced",
+          "amount": 200,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i7",
+          "name": "unsalted butter; three-quarters for leeks, one-quarter for crumbs",
+          "amount": 40,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i8",
+          "name": "fresh thyme leaves",
+          "amount": 2,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i9",
+          "name": "low-sodium gluten-free chicken stock",
+          "amount": 400,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i10",
+          "name": "whole milk",
+          "amount": 300,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i11",
+          "name": "heavy cream",
+          "amount": 200,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i12",
+          "name": "cornstarch",
+          "amount": 20,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i13",
+          "name": "cold water for cornstarch slurry",
+          "amount": 30,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i14",
+          "name": "Parmesan, finely grated; two-thirds for sauce, one-third for crumbs",
+          "amount": 90,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i15",
+          "name": "lemon zest, finely grated yellow part only",
+          "amount": 3,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i16",
+          "name": "fresh lemon juice, add gradually to taste",
+          "amount": 15,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i17",
+          "name": "flat-leaf parsley leaves, chopped; half for sauce, half for finish",
+          "amount": 12,
+          "unit": "g",
+          "section": "Lemon, herb and Parmesan cream"
+        },
+        {
+          "id": "i18",
+          "name": "gluten-free penne or rigatoni, dry",
+          "amount": 340,
+          "unit": "g",
+          "section": "Pasta and crisp topping"
+        },
+        {
+          "id": "i19",
+          "name": "low-moisture mozzarella, grated",
+          "amount": 100,
+          "unit": "g",
+          "section": "Pasta and crisp topping"
+        },
+        {
+          "id": "i20",
+          "name": "gluten-free panko breadcrumbs",
+          "amount": 50,
+          "unit": "g",
+          "section": "Pasta and crisp topping"
+        },
+        {
+          "id": "i21",
+          "name": "reserved pasta cooking water, up to this amount as needed",
+          "amount": 150,
+          "unit": "g",
+          "section": "Pasta and crisp topping"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "title": "Roast the garlic",
+          "content": "Heat the oven to 400°F / 200°C conventional. Put the peeled whole garlic cloves in a small ovenproof dish with one-third of the oil. Cover tightly and roast for 35–45 minutes, until soft and lightly golden. Mash to a paste."
+        },
+        {
+          "id": "s2",
+          "title": "Roast the chicken alongside",
+          "content": "Toss the chicken with the remaining oil, half the salt allowance and the pepper. Spread on a separate rimmed pan and roast alongside the garlic for about 25–35 minutes, until the thickest piece reaches 165°F / 74°C. Rest for 10 minutes, then cut into bite-size pieces. Reserve the cooked juices. Keep the garlic in the oven until soft if it needs longer."
+        },
+        {
+          "id": "s3",
+          "title": "Soften the leeks",
+          "content": "Reduce the oven to 375°F / 190°C. Wash the sliced leeks thoroughly and drain. Melt three-quarters of the butter in a large pan; cook the leeks gently for 10–12 minutes until very soft without browning. Stir in the thyme for 30 seconds."
+        },
+        {
+          "id": "s4",
+          "title": "Make the cream sauce",
+          "content": "Stir the mashed garlic into the leeks, then add the chicken stock, milk, cream and cooked chicken juices. Bring to a gentle simmer. Mix the cornstarch with the listed cold water, stir the slurry into the sauce and simmer for 1–2 minutes. It should coat a spoon but still pour freely."
+        },
+        {
+          "id": "s5",
+          "title": "Add Parmesan, lemon and herbs",
+          "content": "Remove the pan from the heat. Gradually stir in two-thirds of the Parmesan, the lemon zest and half the parsley. Add the lemon juice gradually to taste. Taste before adding more of the remaining salt allowance. Keep warm without boiling."
+        },
+        {
+          "id": "s6",
+          "title": "Cook the pasta",
+          "content": "As the sauce finishes, boil the pasta in salted water. Start checking 2 minutes before the package al-dente time; it should be firm but flexible, without a hard chalky centre. Reserve the listed cooking water, then drain."
+        },
+        {
+          "id": "s7",
+          "title": "Combine",
+          "content": "Immediately fold the pasta and chicken into the sauce. Use reserved pasta water only if needed to keep the mixture generously saucy. Transfer to the baking dish and scatter over the mozzarella."
+        },
+        {
+          "id": "s8",
+          "title": "Add the crisp topping",
+          "content": "Melt the remaining butter. Toss with the gluten-free panko and remaining Parmesan, then scatter evenly over the bake."
+        },
+        {
+          "id": "s9",
+          "title": "Bake and rest",
+          "content": "Bake uncovered for 20–25 minutes, until bubbling through the centre, golden on top and 165°F / 74°C in the centre. Loosely cover with foil if the crumbs brown before the middle is hot. Rest for 10 minutes and finish with the remaining parsley."
+        }
+      ],
+      "notes": [
+        {
+          "title": "Servings and pans",
+          "body": "Base recipe: 6 generous servings in a 23 × 33 cm / 9 × 13 inch baking dish holding at least 3.5 litres. The portion control scales every ingredient by requested servings ÷ 6. For 3 servings, use a 20 cm / 8 inch square dish. For 12, use two full-size dishes; keep the same food depth, rotate as needed, and check each centre. Cooking times and temperatures do not multiply with servings."
+        },
+        {
+          "title": "Weights and gluten-free ingredients",
+          "body": "Gram weights are the recipe standard. Meat weights are raw and trimmed; pasta weight is dry; vegetable weights are after peeling or trimming. Use labelled gluten-free pasta and stock, and gluten-free panko where listed. Use the Recipe or Grams display for measured weights; volume conversions are approximate."
+        },
+        {
+          "title": "Pasta texture",
+          "body": "Aim for firm but flexible pasta before baking. Start checking 2 minutes before the package al-dente time; very brittle or chalky pasta needs longer. Sauce immediately, keeping the mixture a little looser than a plated pasta dish. Add reserved pasta water only as needed. Do not hold the assembled gluten-free pasta for several hours."
+        },
+        {
+          "title": "Recipe status",
+          "body": "Original recipe development, untested v1. Total times and yields are planning estimates. Season to taste and use the doneness cues in the method."
+        },
+        {
+          "title": "Shopping and timing",
+          "body": "For the base six-serving batch, buy about 2 garlic bulbs to yield the listed peeled cloves and 1 large lemon for the zest and juice. Bulb and lemon sizes vary; weigh the prepared ingredients. Allow about 2 hours, with roughly 60 minutes active. Roast the chicken and garlic in parallel, then make the sauce and cook the pasta near assembly time."
         }
       ]
     }
